@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Consulting',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/undraw_consulting.svg').default,
     description: (
       <>
          Contact us for all your IT needs related to modern microservices-based architecture, cloud migration, and other consulting needs.
@@ -15,7 +15,7 @@ const FeatureList = [
   },
   {
     title: 'Internship & Bootcamp',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/undraw_intership.svg').default,
     description: (
       <>
         Unlock your potential with our internship and bootcamp programs. Join now and gain hands-on experience from our team of expert IT professionals.
@@ -26,7 +26,7 @@ const FeatureList = [
   },
   {
     title: 'Tutorials & Interview Preparation',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/undraw_tutorials.svg').default,
     description: (
       <>
          Learn and improve your skills with real-world code samples, tutorials, and interview preparation materials.

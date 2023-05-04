@@ -62,7 +62,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/certifysphere_banner.png',
       navbar: {
         title: 'CertifySphere',
         logo: {
@@ -74,9 +74,10 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Tutorials & WorkShops',
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/contact-us', label: 'Contact-Us', position: 'right'},
           {
             href: 'https://github.com/certifysphere/',
             label: 'GitHub',
