@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Announcement
+# Summer Internship Announcement
 
 :::tip **Summer 2023 Internship Registration Are Open**
 [**Register here**](https://forms.gle/6hTRsphENRVmaHtu8) for Summer intership Registration. 
