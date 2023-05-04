@@ -11,6 +11,7 @@ const FeatureList = [
          Contact us for all your IT needs related to modern microservices-based architecture, cloud migration, and other consulting needs.
       </>
     ),
+    url: '/contact-us'
   },
   {
     title: 'Internship & Bootcamp',
@@ -21,6 +22,7 @@ const FeatureList = [
     
       </>
     ),
+    url: '/docs/intro'
   },
   {
     title: 'Tutorials & Interview Preparation',
@@ -30,17 +32,18 @@ const FeatureList = [
          Learn and improve your skills with real-world code samples, tutorials, and interview preparation materials.
       </>
     ),
+    url: '/docs/category/tutorials'
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({Svg, title, description, url}) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+      <a href={url}><Svg className={styles.featureSvg} role="img" /></a>
       </div>
       <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
+        <h3><a href={url}>{title}</a></h3>
         <p>{description}</p>
       </div>
     </div>
