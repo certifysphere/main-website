@@ -11,7 +11,7 @@ const FeatureList = [
          Contact us for all your IT needs related to modern microservices-based architecture, cloud migration, and other consulting needs.
       </>
     ),
-    url: '#'
+    url: '/contact-us'
   },
   {
     title: 'Internship & Bootcamp',
