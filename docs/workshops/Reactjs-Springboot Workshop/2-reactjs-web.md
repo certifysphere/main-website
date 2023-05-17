@@ -1,12 +1,13 @@
 ---
 sidebar_position: 2
-id: reactjs-ui-web
-title: reactjs-ui-web
+id: create-react-initial-app
+title: Create React App
 tags:
-  - reactjs setup
-  - reactjs-ui-web
+  - React Setup
+  - Install NodeJS
+  - PublicToilets Initial Components
 ---
-# Chapter 1: Building a Simple ReactJS UI Application 
+# Chapter 1: Building a Simple ReactJS Application 
 In this chapter, we will focus on building a simple ReactJS UI app with basic CRUD (Create, Read, Update, and Delete) operations. The app will be about **Public Toilets** listing where the user can add, update, remove public toilets, and view the list of public toilets. We will use an in-memory array in the UI app for CRUD operations.
 :::tip
 This workshop focuses on providing you with hands-on experience in building a complete solution for Front-End UI, Backend API, database, and cloud deployment. While we cover the technologies used in this workshop, we may not be able to delve into each technology in depth. Therefore, we recommend further studying all the technologies and frameworks by referring to their documentation. Refer to [Futher Learning Section](#further-learning) for resrouces.
@@ -15,6 +16,7 @@ This workshop focuses on providing you with hands-on experience in building a co
 ## 1. Setting up the Development Environment
 Before we start building our app, we need to set up the development environment. To build the UI app, we will use Node.js and ReactJS. Follow these steps to set up the development environment:
 
+### Install Node.JS
 1. Open your terminal or command prompt.
 
 1. Install `Node.js` from the official website if you haven't already. You can download it from here: https://nodejs.org/en/download/.
@@ -33,7 +35,7 @@ Before we start building our app, we need to set up the development environment.
    ```
    npm install -g npx
    ```
-
+### Create ReactJs App
 1. Create a new ReactJS app named `public-toilets-app` by running the following command:
    ```
    npx create-react-app public-toilets-app
@@ -52,32 +54,47 @@ Before we start building our app, we need to set up the development environment.
    ```
    npm install
    ```
+### Run React App
 
-1. Once you have generated the initial ReactJS app, navigate to the root directory of the app using the command prompt or terminal and enter the following command:
-   ```
-   npm start run
-   ```
+Once you have generated the initial ReactJS app, navigate to the root directory of the app using the command prompt or terminal and enter the following command:
+  ```
+  npm start run
+  ```
 This will start the development server and open the app in your default browser at [http://localhost:3000](http://localhost:3000). You can now start making changes to the app and see the changes reflected in the browser in real-time.
 
 if the app is running, you should see the ReactJS default page in the browser.
 
 ![React Running app](./img/reactinitial-running.jpg)
 
+:::tip
 To stop the development server, you can press `CTRL + C` in the command prompt or terminal.
+:::
 
-8. Open the project directory (public-toilets-app) in Visual Studio Code or your preferred text editor or IDE. You should see the files as shown below.
+### Open project in IDE
+
+Open the project directory (public-toilets-app) in Visual Studio Code or your preferred text editor or IDE. You should see the files as shown below.
 
 ![VS Code initial Code Structure](./img/vscode-initial-setup.jpg)
 
-:::info
-  Source Code for this section is in **initial-react-app** branch in Github repository [public-toilets-app](https://github.com/certifysphere/workshops/tree/main/reactjs-springboot-workshop/public-toilets-app). You can also clone this github repo, checkout 'initial-react-app' branch and run it locally.
+### Github Repo
+:::note
+  The source code for this section is available in the **initial-react-app** branch of the GitHub repository [public-toilets-app](https://github.com/certifysphere/workshops/tree/main/reactjs-springboot-workshop/public-toilets-app).
+
+  To clone the repository and switch to the **initial-react-app** branch, you can use the following commands:
+
+  ```bash
+  git clone --branch initial-react-app https://github.com/certifysphere/workshops.git
+  cd workshops/reactjs-springboot-workshop/public-toilets-app/
+  ```
+
+  After cloning the repository and navigating to the appropriate directory, you can explore the code and run it locally as per the instructions provided in the workshop.
 :::
 
 
 That's it for this section! 🎉 We now have a new ReactJS app named `public-toilets-app` running. In the next section, we will add actual UI components.
 
 
-## 2. Creating the UI components
+## 2. Create the PublicToilets UI components
 Now that we have set up our development environment, let's start creating the UI components for our app. In ReactJS, UI components are created using JSX syntax, which allows you to write HTML-like code in JavaScript.
 
 We will create the following components for our app:
@@ -363,8 +380,25 @@ The provided code snippet represents a singleton JavaScript class, MockPublicToi
 
   These methods collectively provide functionality for fetching, adding, updating, and deleting public toilets, as well as rendering the UI components for displaying and interacting with the data.
 
-:::info
-You can refer and clone the code upto this section in Github repo in [with-in-memory-datastore](https://github.com/certifysphere/workshops/tree/with-in-memory-datastore/reactjs-springboot-workshop/public-toilets-app) branch.
+### Github Repo
+:::note
+  You can refer to and clone the code up to this section from the GitHub repository using the `with-in-memory-datastore` branch.
+
+  To clone the repository, you can use the following command:
+
+  ```bash
+  git clone --branch with-in-memory-datastore https://github.com/certifysphere/workshops.git
+  ```
+
+  This will clone the repository and checkout the `with-in-memory-datastore` branch, which contains the code up to this section of the workshop.
+
+  You can then navigate to the `public-toilets-app` directory to access the React app code:
+
+  ```bash
+  cd workshops/reactjs-springboot-workshop/public-toilets-app/
+```
+
+From there, you can explore the code and continue with the workshop.
 :::
 
 ### Testing

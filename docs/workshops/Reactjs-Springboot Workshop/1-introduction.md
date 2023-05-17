@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 id: reactjs-springboot-overview
-title: overview
+title: Overview
 tags:
   - ReactJS
   - Springboot
@@ -88,23 +88,15 @@ I am using Visual Studio Code as my code editor for the development of this app.
 Here are some references that you can use to further enhance your skills related to the technologies used in this workshop:
 
 - **ReactJS**
-  - Official ReactJS Documentation: https://reactjs.org/docs/getting-started.html
-  - ReactJS Tutorial on Udemy: https://www.udemy.com/course/react-the-complete-guide-incl-redux/
+  - Official ReactJS Documentation: https://react.dev/learn
 - **Spring Boot**
   - Official Spring Boot Documentation: https://spring.io/projects/spring-boot
-  - Spring Boot Tutorial on Udemy: https://www.udemy.com/course/spring-boot-microservices-with-spring-cloud-beginner-to-guru/
 - **PostgreSQL**
   - Official PostgreSQL Documentation: https://www.postgresql.org/docs/
-  - PostgreSQL Tutorial on Udemy: https://www.udemy.com/course/the-complete-postgresql-bootcamp/
 
 Additionally, you can also refer to the documentation and tutorials provided by the development tools that you will be using in this workshop, such as Visual Studio Code, Git, and GitHub.
 
-
-
-
 By the end of this workshop, you will have a basic understanding of the 3-tier architecture pattern and how to build a web application using ReactJS, Spring Boot, and PostgreSQL. You will also be able to extend the application with additional features and functionality. So, let's get started!
-
-
 
 
 
