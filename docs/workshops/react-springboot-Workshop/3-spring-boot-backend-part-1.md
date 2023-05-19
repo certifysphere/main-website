@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
-id: springboot-backend-rest-services-part-1
-title: Springboot Backend Rest Services - Part-1
+id: springboot-rest-services-part-1
+title: Springboot Rest Services - Part-1
 tags:
   - springboot
   - rest services
