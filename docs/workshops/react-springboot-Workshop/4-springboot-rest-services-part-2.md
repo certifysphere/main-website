@@ -43,7 +43,7 @@ Here's an explanation of each component in a REST API application:
 
 By following this flow, the controller receives the HTTP requests, delegates the processing to the service layer, which in turn interacts with the repository for data access and manipulation. The repository then communicates with the underlying database to perform the requested operations.
 
-Remember to complete [Part-1](3-spring-boot-backend-part-1.md) or download the source code from the git branch (as mentioned in Part-1) before starting with this chapter.
+Remember to complete [Part-1](3-springboot-rest-services-part-1.md) or download the source code from the git branch (as mentioned in Part-1) before starting with this chapter.
 
 
 :::info
@@ -297,7 +297,7 @@ We can test the Public Toilets Services CRUD operations of the service using CUR
 
 Here are some examples:
 
-- First, make sure the Spring Boot app is running. If it's not running already, follow the steps mentioned in [Part 1](springboot-backend-rest-services-part-1.md#run-the-service) to run the service.
+- First, make sure the Spring Boot app is running. If it's not running already, follow the steps mentioned in [Part 1](3-springboot-rest-services-part-1.md#run-the-service) to run the service.
 
 - POST a new public toilet:
 
