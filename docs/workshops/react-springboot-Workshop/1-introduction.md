@@ -59,18 +59,18 @@ As we are trying to keep this workshop more realistic to the culture of big orga
     - Story 3: Adding API calls to update existing public toilets through the Spring Boot API
     - Story 4: Adding API calls to delete public toilets through the Spring Boot API
     - Story 5: Testing the integration between the React UI and Spring Boot API
-- Epic 4: Adding Authentication and Authorization
-    - Story 1: Setting up the authentication and authorization framework
-    - Story 2: Implementing user registration and login functionality
-    - Story 3: Restricting access to the UI and API endpoints based on user roles
-    - Story 4: Implementing password reset functionality
-    - Story 5: Testing the authentication and authorization functionality
-- Epic 5: Deploying to the Cloud
+- Epic 4: Deploying to the Cloud
     - Story 1: Setting up the AWS environment
     - Story 2: Configuring the application to run on AWS
     - Story 3: Deploying the React UI to AWS
     - Story 4: Deploying the Spring Boot API to AWS
     - Story 5: Testing the deployed application on AWS
+- Epic 5: Adding Authentication and Authorization
+    - Story 1: Setting up the authentication and authorization framework
+    - Story 2: Implementing user registration and login functionality
+    - Story 3: Restricting access to the UI and API endpoints based on user roles
+    - Story 4: Implementing password reset functionality
+    - Story 5: Testing the authentication and authorization functionality
 ## Tools 
 I am using Visual Studio Code as my code editor for the development of this app. You can use the same code editor or any other that you are comfortable with. Here are some popular development tools that you may find helpful for this workshop:
 
