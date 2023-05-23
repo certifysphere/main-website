@@ -53,7 +53,7 @@ As we are trying to keep this workshop more realistic to the culture of big orga
     - Story 3: Creating the API endpoint for adding new public toilets
     - Story 4: Creating the API endpoint for updating public toilets
     - Story 5: Creating the API endpoint for deleting public toilets
-- Epic 3: Integrating the React UI with the Spring Boot API
+- Epic 3: Integrating the React UI with the Spring Rest Services
     - Story 1: Adding API calls to retrieve public toilets from the Spring Boot API
     - Story 2: Adding API calls to add new public toilets through the Spring Boot API
     - Story 3: Adding API calls to update existing public toilets through the Spring Boot API
