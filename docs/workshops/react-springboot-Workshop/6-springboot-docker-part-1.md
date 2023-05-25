@@ -23,90 +23,82 @@ This chapter is part of the [React-Springboot Workshop](1-introduction.md). If y
 ## Tools & Installations 
 The following tools and an AWS account will be needed to complete this chapter. Please refer to the official documentation for the installation steps of each tool and follow the instructions provided. Once you have all the required tools installed and an AWS account set up, you can proceed with the chapter.
 
-### 1. AWS (Amazon Web Services):
+### 1. AWS Account (Amazon Web Services):
    - AWS is a cloud computing platform that provides a wide range of services and solutions for building and deploying applications in the cloud.
-   - To follow along with this chapter, you can create an AWS free account by visiting the [AWS Free Tier](https://aws.amazon.com/free/) page. It provides a limited set of services and resources free of charge for a specific duration.
+   - To follow along with this chapter, you can create an AWS free account by visiting the [AWS Free Tier](https://aws.amazon.com/free/) page. The AWS Free Tier provides a limited set of services and resources free of charge for a specific duration.
+   - During the account registration process, AWS may ask for credit card information. However, if you use only the services included in the free tier, you should not incur any charges.
 
-### 2. AWS Lambda:
-   - AWS Lambda is a serverless compute service offered by AWS. It allows you to run your code without provisioning or managing servers.
-   - You can find detailed information about AWS Lambda in the [official documentation](https://aws.amazon.com/lambda/).
-
-### 3. AWS API Gateway:
-   - AWS API Gateway is a fully managed service that makes it easy to create, publish, and manage APIs at any scale.
-   - It provides features such as authentication, rate limiting, caching, and request/response transformations.
-   - For more information about AWS API Gateway, refer to the [official documentation](https://aws.amazon.com/api-gateway/).
-
-### 4. AWS CLI (Command Line Interface):
+### 2. AWS CLI (Command Line Interface):
    - AWS CLI is a unified tool provided by AWS to manage various AWS services from the command line.
    - It enables you to interact with AWS services, including Lambda, API Gateway, and more, using commands.
    - You can install and configure AWS CLI by following the instructions in the [official documentation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+   - Run the following command to verify the installation and check the AWS CLI version:
+        ```
+        aws --version
+        ```
+      - If the command returns the AWS CLI version without any errors, the installation is successful.
+   - `Once AWS CLI is installed, we need to configure it to connect to the AWS account created in the previous steps. Follow the steps below:`
 
-### 5. Docker and Containers:
+1. Set up an IAM user:
+   - To set up a CLI with an IAM user, follow the instructions provided in the [official documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-authentication-user.html).
+   - Create an IAM user and download the Access Key ID and Secret Access Key.
+
+2. Configure AWS CLI:
+   - Open a command prompt or terminal and run the following command:
+     ```bash
+     aws configure
+     ```
+   - Provide the downloaded Access Key ID and Secret Access Key when prompted.
+   - Specify the default region name (e.g., `us-east-1`) and default output format (e.g., `json`).
+
+3. Verify AWS CLI configuration:
+   - Run the following command in the command prompt or terminal:
+     ```bash
+     aws s3 ls
+     ```
+   - If the command does not give any error or return any output, it means the AWS CLI is successfully authenticated and connected to your AWS account.
+
+### 3. Docker and Containers:
    - Docker is an open-source platform that allows you to automate the deployment and management of applications using containers.
    - Containers are lightweight, isolated environments that package all the necessary components and dependencies required to run an application.
    - To install Docker locally, you can follow the installation instructions provided in the [official documentation](https://docs.docker.com/get-docker/).
+   - Open a command prompt or terminal window.
+   - **Installation Validation**:
+      - Run the following command to verify the installation and check the Docker version:
+        ```
+        docker --version
+        ```
+      - If the command returns the Docker version without any errors, the installation is successful.
 
-### 6. Infrastructure as Code (IAC) and Terraform:
+### 4. Terraform (Infrastructure as Code (IAC)) :
    - Infrastructure as Code (IAC) is an approach to infrastructure management using code-based definitions.
    - Terraform is an open-source IAC tool developed by HashiCorp. It allows you to define and provision infrastructure resources using declarative configuration files.
    - To install Terraform locally, refer to the installation instructions provided in the [official documentation](https://learn.hashicorp.com/tutorials/terraform/install-cli).
-
-
-## Installation Validation
-
-Before proceeding with the chapter, let's validate the installation of the required tools:
-
-1. AWS CLI:
-   - Open a command prompt or terminal window.
-   - Run the following command to verify the installation and check the AWS CLI version:
-     ```
-     aws --version
-     ```
-   - If the command returns the AWS CLI version without any errors, the installation is successful.
-
-2. Docker:
-   - Open a command prompt or terminal window.
-   - Run the following command to verify the installation and check the Docker version:
-     ```
-     docker --version
-     ```
-   - If the command returns the Docker version without any errors, the installation is successful.
-
-3. Terraform:
-   - Open a command prompt or terminal window.
-   - Run the following command to verify the installation and check the Terraform version:
-     ```
-     terraform version
-     ```
-   - If the command returns the Terraform version without any errors, the installation is successful.
-
-4. Java Development Kit (JDK):
-   - Open a command prompt or terminal window.
-   - Run the following command to verify the installation and check the Java version:
-     ```
-     java -version
-     ```
-   - If the command returns the Java version without any errors, the installation is successful.
-
-5. Maven:
-   - Open a command prompt or terminal window.
-   - Run the following command to verify the installation and check the Maven version:
-     ```
-     mvn --version
-     ```
-   - If the command returns the Maven version without any errors, the installation is successful.
-
+   - **Installation Validation**:
+      - Open a command prompt or terminal window.
+      - Run the following command to verify the installation and check the Terraform version:
+        ```
+        terraform version
+        ```
+      - If the command returns the Terraform version without any errors, the installation is successful.
+  
 Ensure that all the tools are successfully installed and their versions are displayed correctly. If any of the tools are not installed or the versions are not displayed as expected, please refer to the respective official documentation for installation instructions and troubleshoot any issues encountered.
 
-Once the installation of all the required tools is validated, we can proceed with the next steps in the chapter.
-
 ## Dockerized SpringBoot App 
+**Docker** allows us to package the application along with its dependencies and runtime environment into a container. This ensures that the application runs consistently across different environments, regardless of the underlying host system or configuration. It eliminates the "works on my machine" problem by providing a consistent environment for your application.
 
-### Step 1: Docker Installation
-1. Install Docker by following the official documentation: [Docker Installation Guide](https://docs.docker.com/get-docker/)
+**Container** - A container is a lightweight, standalone executable package that includes everything needed to run an application, including the code, runtime, system tools, libraries, and settings. It provides a consistent and isolated environment for running applications, ensuring that they run consistently across different computing environments. 
 
-### Step 2: Dockerize Spring App
+Containerization has become increasingly popular in the software development and deployment landscape, with Docker being one of the most widely adopted containerization platforms. Docker simplifies the process of creating, managing, and running containers, providing tools and workflows to build, deploy, and scale containerized applications.
+
+### Step 1: Add Dockerfile 
 1. In your Spring app project directory, create a file named `Dockerfile` (without any file extension).
+```
+reactjs-springboot-workshop/
+├── public-toilet-app/
+└── public-toilet-service/
+    |- Dockerfile
+```
 2. Open the `Dockerfile` in a text editor and add the following content:
 ```Dockerfile
 # Use the official OpenJDK 11 image as the base image
@@ -116,15 +108,17 @@ FROM adoptopenjdk/openjdk11:latest
 WORKDIR /app
 
 # Copy the JAR file from the target directory into the container
-COPY target/your-app.jar app.jar
+COPY ./target/public-toilet-service-0.0.1-SNAPSHOT.jar app.jar
+
+EXPOSE 8080
 
 # Specify the command to run the Spring app
-CMD ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
 ```
 3. Save the `Dockerfile`.
 
 ### Step 3: Build Docker Image
-1. Make sure Docker Desktop application is installed and running (installed in the previous step)
+1. `Make sure Docker Desktop application is installed and running (installed in the previous step)`
 1. Open a terminal or command prompt.
 1. Navigate to your SpringBoot app project directory (public-toilet-service).
 1. Build the Spring project using Maven to ensure a new deployable Spring's executable Jar file is created:
