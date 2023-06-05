@@ -2,10 +2,10 @@
 sidebar_position: 1
 ---
 
-# Summer Internship Announcement
+# Fall Internship Announcement
 
-:::tip **Summer 2023 Internship Registration Are Open**
-[**Register here**](https://forms.gle/6hTRsphENRVmaHtu8) for Summer intership Registration. 
+:::tip **Fall 2023 Internship Registration Are Open**
+[**Register here**](https://forms.gle/Lp6RQ1unCzZB5Pyn9) for Fall 2023 intership Registration. 
 :::
 
 In today's rapidly changing world, software development is a critical skill for anyone looking to succeed in their career. Whether you're a student looking to expand your knowledge or a seasoned professional seeking to stay current with the latest trends and technologies, this training program is designed to help you gain the skills and experience you need to succeed in the field of software development.
