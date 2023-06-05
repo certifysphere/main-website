@@ -21,7 +21,15 @@ By the end of this chapter, you will have a SpringBoot backend application packa
 
 If you haven't completed the previous chapter, you can download the source code from the [Git repository](https://github.com/certifysphere/workshops.git) and follow the instructions provided to add Docker support to the SpringBoot backend application.
 
+### 2. AWS Lambda:
+   - AWS Lambda is a serverless compute service offered by AWS. It allows you to run your code without provisioning or managing servers.
+   - You can find detailed information about AWS Lambda in the [official documentation](https://aws.amazon.com/lambda/).
 
+### 3. AWS API Gateway:
+   - AWS API Gateway is a fully managed service that makes it easy to create, publish, and manage APIs at any scale.
+   - It provides features such as authentication, rate limiting, caching, and request/response transformations.
+   - For more information about AWS API Gateway, refer to the [official documentation](https://aws.amazon.com/api-gateway/).
+   
 ## Adding Terraform Infrastructure code in SpringBoot App
 To deploy your Spring app as a Docker container in AWS Lambda and expose the CRUD endpoints with AWS API Gateway using Terraform, follow these steps:
 
@@ -36,7 +44,7 @@ To deploy your Spring app as a Docker container in AWS Lambda and expose the CRU
 
 ### Step 4: Set Up Terraform Files
 1. In your SpringBoot Service (public-toilet-service) project root directory, create a new directory named `terraform`.
-2. Inside the `terraform` directory, create a new file named `main.tf` and open it in a text editor.
+2. Inside the `terraform` directory, create a new file named `main.tf` and open it in a text editor (VSCode).
 3. Add the following content to the `main.tf` file:
 
 ```tf

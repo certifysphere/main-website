@@ -97,7 +97,7 @@ const config = {
       },
        footer: {
          style: 'dark',
-      //   links: [
+         links: [
       //     {
       //       title: 'Docs',
       //       items: [
@@ -118,17 +118,17 @@ const config = {
       //           label: 'Discord',
       //           href: 'https://discordapp.com/invite/docusaurus',
       //         },
-      //         {
-      //           label: 'Twitter',
-      //           href: 'https://twitter.com/docusaurus',
-      //         },
-      //       ],
+                {
+                  label: 'Twitter',
+                  href: 'https://twitter.com/certifysphere',
+                },
+             ],
       //     },
       //     {
       //       title: 'More',
       //       items: [
       //         {
-      //           label: 'Blog',
+      //           label: 'Blog`',
       //           to: '/blog',
       //         },
       //         {
@@ -137,7 +137,7 @@ const config = {
       //         },
       //       ],
       //     },
-      //   ],
+   //      ],
          copyright: `Copyright © ${new Date().getFullYear()} CertifySphere Solutions. IT Cloud Consulting & Trainings Solutions`,
        },
       prism: {
