@@ -1,6 +1,6 @@
 ---
-id: spring-rest-api--docker-aws-lambda-terraform-part-1
-title: Deploy Spring REST API to AWS Lambda - Terraform - Part-1
+id: dockerized-spring-boot-rest-api
+title: Dockerized SpringBoot Java App
 tags:
   - Springboot
   - Rest services
@@ -9,7 +9,7 @@ tags:
   - Terraform
   - AWS API Gateway
 ---
-# Chapter 4: Deploy Java Spring Boot Rest API to AWS Lambda as a Docker Container with Terraform and Expose Rest API Endpoint with AWS API Gateway - Part-1
+# Chapter 4: Dockerized Java Spring Boot Rest API - Part-1
 
 In this chapter, we will learn how to deploy a Java Spring Boot REST API to AWS Lambda as a Docker container using Terraform. We will also explore how to expose the API endpoint using AWS API Gateway. 
 
