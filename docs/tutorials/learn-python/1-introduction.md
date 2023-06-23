@@ -57,3 +57,16 @@ You should see the output `Hello, World!` displayed on the console.
 Congratulations! You've successfully written and executed your first Python program.
 
 In the next section, we'll dive into Python basics.
+
+### Github Repo
+:::info
+  You can refer to and clone the code samples for this tutorial from the [GitHub repository](https://github.com/certifysphere/python-code-samples).
+
+  To clone the repository, you can use the following command:
+
+  ```bash
+  git clone https://github.com/certifysphere/python-code-samples.git
+  ```
+
+  You can then navigate to the `/src` directory to access all the code samples given in this tutorial. 
+:::

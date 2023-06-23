@@ -162,6 +162,18 @@ Instance methods allow objects to perform actions and interact with their own da
 
 Both class methods and instance methods play important roles in defining the behavior and functionality of classes in Object-Oriented Programming. By understanding and utilizing these methods effectively, you can create more flexible and powerful class designs.
 
+### Github Repo
+:::info
+  You can refer to and clone the code samples for this tutorial from the [GitHub repository](https://github.com/certifysphere/python-code-samples).
+
+  To clone the repository, you can use the following command:
+
+  ```bash
+  git clone https://github.com/certifysphere/python-code-samples.git
+  ```
+
+  You can then navigate to the `/src` directory to access all the code samples given in this tutorial. 
+:::
 
 ### Summary
 
