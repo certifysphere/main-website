@@ -75,9 +75,7 @@ Lists, tuples, and dictionaries are used to store collections of values.
 
 ```python
 # Lists
-fruits = ["
-
-apple", "banana", "orange"]
+fruits = ["apple", "banana", "orange"]
 print(fruits[0])  # Output: "apple"
 
 # Tuples

@@ -24,7 +24,7 @@ Here are a few reasons why learning Python is beneficial:
 
 To get started with Python, you'll need to install it on your computer and set up your development environment. Here's a step-by-step guide:
 
-1. **Download Python**: Visit the official Python website at python.org and go to the downloads section. Choose the version of Python appropriate for your operating system (Windows, macOS, or Linux) and download the installer.
+1. **Download Python**: Visit the official Python website at [python.org](https://www.python.org/downloads/) and go to the downloads section. Choose the version of Python appropriate for your operating system (Windows, macOS, or Linux) and download the installer.
 
 2. **Run the installer**: Once the installer is downloaded, run it and follow the installation wizard. Make sure to check the option to add Python to your system's PATH, as it will make it easier to run Python from the command line.
 
@@ -56,4 +56,4 @@ You should see the output `Hello, World!` displayed on the console.
 
 Congratulations! You've successfully written and executed your first Python program.
 
-In the next section, we'll dive into Python basics, including
+In the next section, we'll dive into Python basics.
