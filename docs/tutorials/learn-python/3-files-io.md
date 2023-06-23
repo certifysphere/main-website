@@ -89,9 +89,7 @@ Python allows you to interact with standard input (`stdin`) and standard output 
 name = input("Enter your name: ")
 age = input("Enter your age: ")
 
-print(f"Hello, {
-
-name}! You are {age} years old.")
+print(f"Hello, {name}! You are {age} years old.")
 ```
 
 In the above code, we use the `input()` function to prompt the user for input. The user's name and age are stored in variables. Then, we use the `print()` function to display a message that includes the provided name and age.
