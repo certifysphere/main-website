@@ -22,7 +22,7 @@ const FeatureList = [
     
       </>
     ),
-    url: '/docs/intro'
+    url: '/docs/bootcamp/internship'
   },
   {
     title: 'Tutorials & Interview Preparation',

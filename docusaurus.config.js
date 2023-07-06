@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'CertifySphere',
-  tagline: 'IT Cloud Consulting & Trainings Solutions',
+  tagline: 'IT Consulting & Trainings Solutions',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -71,22 +71,36 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [{name: 'keywords', content: 'free coding bootcamp, learn python, learn reactjs, aws, software consulting'}],
       // Replace with your project's social card
-      image: 'img/certifysphere_banner.png',
+      image: 'img/certifysphere_banner_social.png',
       navbar: {
         title: 'CertifySphere',
         logo: {
           alt: 'CertifySphere Solutions Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo_new.png',
         },
         items: [
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorials & WorkShops',
+            label: 'Tutorials',
           },
-          // {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            type: 'docSidebar',
+            sidebarId: 'workshopSidebar',
+            position: 'left',
+            label: 'WorkShops',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'bootcampSidebar',
+            position: 'left',
+            label: 'Free BootCamp',
+          },
+
+           //{to: '/blog', label: 'Blog', position: 'left'},
           {to: '/contact-us', label: 'Contact-Us', position: 'right'},
           {
             href: 'https://github.com/certifysphere/',
@@ -138,7 +152,7 @@ const config = {
       //       ],
       //     },
    //      ],
-         copyright: `Copyright © ${new Date().getFullYear()} CertifySphere Solutions. IT Cloud Consulting & Trainings Solutions`,
+         copyright: `Copyright © ${new Date().getFullYear()} CertifySphere Solutions.`,
        },
       prism: {
         theme: lightCodeTheme,

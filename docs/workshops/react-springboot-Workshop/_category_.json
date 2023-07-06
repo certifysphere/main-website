@@ -1,9 +1,7 @@
 {
-  "label": "React-SpringBoot WorkShop",
+  "label": "React SpringBoot WorkShop",
   "link": {
     "type": "generated-index",
-    "description": "The ReactJS-SpringBoot Workshop is a hands-on training that will teach you how to build full-stack web applications using ReactJS and SpringBoot. You will learn how to use ReactJS to create user interfaces and how to use SpringBoot to create RESTful APIs. You will also learn how to integrate ReactJS and SpringBoot together to build a complete web application.
-The workshop will cover the following topics: ReactJS basics, SpringBoot basics, Integrating ReactJS and SpringBoot, Building a full-stack web application, Deploy React and SpringBoot application to AWS cloud.
-The workshop is designed for developers who are familiar with JavaScript ans Java, and who want to learn how to build full-stack web applications using ReactJS and SpringBoot."
+    "description": "The ReactJS-SpringBoot Workshop is a hands-on training that will teach you how to build full-stack web applications using ReactJS and SpringBoot. You will learn how to use ReactJS to create user interfaces and how to use SpringBoot to create RESTful APIs. You will also learn how to integrate ReactJS and SpringBoot together to build a complete web application. The workshop will cover the following topics: ReactJS basics, SpringBoot basics, Integrating ReactJS and SpringBoot, Building a full-stack web application, Deploy React and SpringBoot application to AWS cloud.The workshop is designed for developers who are familiar with JavaScript ans Java, and who want to learn how to build full-stack web applications using ReactJS and SpringBoot."
   }
 }

@@ -1,5 +1,5 @@
 
-![CertifySphere](./img/certifysphere_banner.png)
+![CertifySphere](/img/certifysphere_banner.png)
 
 We would love to hear from you! Whether you have a question about our services, want to learn more about our company, or have any other IT needs, we are here to help.
 
