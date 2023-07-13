@@ -93,14 +93,13 @@ const config = {
             position: 'left',
             label: 'WorkShops',
           },
+          // {to: '/blog', label: 'Blog', position: 'left'},
           {
             type: 'docSidebar',
             sidebarId: 'bootcampSidebar',
-            position: 'left',
+            position: 'right',
             label: 'Free BootCamp',
           },
-
-           //{to: '/blog', label: 'Blog', position: 'left'},
           {to: '/contact-us', label: 'Contact-Us', position: 'right'},
           {
             href: 'https://github.com/certifysphere/',
