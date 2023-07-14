@@ -102,8 +102,173 @@ This command installs Express.js and adds it as a dependency in the package.json
 
 Congratulations! You have set up your Node.js development environment and created a basic Express server. You can now proceed with developing the Node.js backend Rest Services by adding routes, controllers, and other necessary components to build your REST API.
 
+## REST API For PublicToilets Usecase
+
+In the previous section, we created a basic server app using Express.js that returns "Hello World!" when accessing the root URL of the server app (http://localhost:3002). Now, we will add new endpoints to the `server.js` file to enable CRUD operations (Create, Retrieve, Update, Delete) for our Public Toilets sample app or any other server REST API app.
+
+### Updated server.js Code
+
+Replace the code in the `server.js` file with the following:
+
+```javascript
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const app = express();
+const port = 3002;
+
+// Middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// Public Toilets Data (replace this with your database or data source)
+let publicToilets = [
+  { id: 1, name: 'Toilet 1', location: 'Location 1' },
+  { id: 2, name: 'Toilet 2', location: 'Location 2' },
+];
+
+// Get all public toilets
+app.get('/public-toilets', (req, res) => {
+  res.json(publicToilets);
+});
+
+// Get a specific public toilet by ID
+app.get('/public-toilets/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const toilet = publicToilets.find((toilet) => toilet.id === id);
+
+  if (toilet) {
+    res.json(toilet);
+  } else {
+    res.status(404).json({ message: 'Public toilet not found' });
+  }
+});
+
+// Create a new public toilet
+app.post('/public-toilets', (req, res) => {
+  const { name, location } = req.body;
+  const id = publicToilets.length + 1;
+  const newToilet = { id, name, location };
+
+  publicToilets.push(newToilet);
+
+  res.status(201).json(newToilet);
+});
+
+// Update an existing public toilet
+app.put('/public-toilets/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const { name, location } = req.body;
+  const toilet = publicToilets.find((toilet) => toilet.id === id);
+
+  if (toilet) {
+    toilet.name = name;
+    toilet.location = location;
+
+    res.json(toilet);
+  } else {
+    res.status(404).json({ message: 'Public toilet not found' });
+  }
+});
+
+// Delete a public toilet
+app.delete('/public-toilets/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const index = publicToilets.findIndex((toilet) => toilet.id === id);
+
+  if (index !== -1) {
+    const deletedToilet = publicToilets.splice(index, 1);
+    res.json(deletedToilet[0]);
+  } else {
+    res.status(404).json({ message: 'Public toilet not found' });
+  }
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+```
+
+This updated `server.js` file includes the following CRUD endpoints:
+
+- GET `/public-toilets`: Retrieves all public toilets.
+- GET `/public-toilets/:id`: Retrieves a specific public toilet by its ID.
+- POST `/public-toilets`: Creates a new public toilet.
+- PUT `/public-toilets/:id`: Updates an existing public toilet.
+- DELETE `/public-toilets/:id`: Deletes a public toilet.
+
+This code initializes an Express.js server and sets up middleware to handle request body parsing. It prepares the server to handle REST API endpoints for the PublicToilets use case.
+- The `express` module is imported to create an instance of the Express application.
+- The `body-parser` module is imported to parse incoming request bodies.
+- An instance of the Express application is created using `express()`.
+- The server will listen on port `3002`.
+- Middleware is added to the application using `app.use()`. The `body-parser` middleware is used to parse the request body in both JSON and URL-encoded formats.
+
+### Test Rest Endpoints
+You can test these CRUD operations using tools like Postman or cURL by sending HTTP requests to the corresponding endpoints. For example:
+
+- To retrieve all toilets, send a GET request to `http://localhost:3002/api/public-toilets`.
+- To create a new toilet, send a POST request to `http://localhost:3002/api/public-toilets` with the toilet details in the request body.
+- To update a toilet, send a PUT request to `http://localhost:3002/api/public-toilets/:id` with the updated toilet details in the request body and the toilet ID as a parameter.
+- To delete a toilet, send a DELETE request to `http://localhost:3002/api/public-toilets/:id` with the toilet ID as a parameter.
 
 
+`Here are some examples`:
+
+- First, make sure the `node server.js` app is running. 
+
+- POST a new public toilet:
+
+    ```sh
+    curl -X POST \
+    http://localhost:3002/public-toilets \
+    -H 'Content-Type: application/json' \
+    -d '{
+            "name": "Public Toilet 1",
+            "location": "Sample City, Sample State, Sample Country"
+        }'
+    ```
+
+    This should insert the new toilet record in the H2 Database. You can add 2-3 more records with different data.
+
+- GET all public toilets:
+
+    ```sh
+    curl -X GET http://localhost:3002/public-toilets
+    ```
+
+    This should return all the PublicToilet records that were inserted in the previous step.
+
+- GET a specific public toilet by id:
+
+    ```sh
+    curl -X GET http://localhost:3002/public-toilets/{id}
+    ```
+
+    Replace {id} with a number. The id is an auto-generated sequential field. Try using numbers starting from 1, based on the number of records present in the database.
+
+- PUT update an existing public toilet:
+
+    ```sh
+    curl -X PUT \
+    http://localhost:3002/public-toilets/{id} \
+    -H 'Content-Type: application/json' \
+    -d '{
+            "name": "Public Toilet New Name",
+            "location": "Sample City, Sample State, Sample Country"
+        }'
+    ```
+
+    Replace {id} with a number. This should update the record with the provided id in the database. Try retrieving the record again, and you should see the updated result.
+
+- DELETE a public toilet by id:
+
+    ```sh
+    curl -X DELETE http://localhost:3002/public-toilets/{id}
+    ```
+
+    Again, replace {id} with a number. This should delete the record with the provided id from the database.
 
 
 
