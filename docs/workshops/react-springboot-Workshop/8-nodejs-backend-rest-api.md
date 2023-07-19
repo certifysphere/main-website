@@ -329,6 +329,11 @@ Step 5: Connect to the PostgreSQL Database
 
 You are now connected to the PostgreSQL database.
 
+:::tip
+If you are new to databases and PostgreSQL, the following link can help to get up to speed quickly. 
+ **PostgreSQL Tutorial by PostgreSQLTutorial.com**: This website offers a step-by-step tutorial for beginners to learn PostgreSQL. It covers various topics, including installation, basic SQL queries, data manipulation, and advanced concepts. You can find the tutorial here: [PostgreSQL Tutorial](https://www.postgresqltutorial.com/)
+:::
+
 
 ### Github Repo
 :::tip
