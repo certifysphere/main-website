@@ -270,8 +270,8 @@ You can test these CRUD operations using tools like Postman or cURL by sending H
 
     Again, replace {id} with a number. This should delete the record with the provided id from the database.
 
-## Connect Express Server App With Database
-To connect our Express server app with a real database and perform CRUD operations, we need to choose and configure a database system. There are various options available, such as MySQL, PostgreSQL, MongoDB, etc. For this workshop, we will use PostgreSQL, which is a popular open-source relational database system.
+## Database 
+To connect our Express server app with a real database and perform CRUD operations, we need to choose and configure a database system. There are various options available, such as `MySQL`, `PostgreSQL`, `MongoDB`, etc. For this workshop, we will use `PostgreSQL`, which is a popular open-source relational database system.
 
 ### Install PostgreSQL Database 
 
@@ -329,13 +329,181 @@ Step 5: Connect to the PostgreSQL Database
 
 You are now connected to the PostgreSQL database.
 
+### Learn PostgreSQL
 :::tip
-If you are new to databases and PostgreSQL, the following link can help to get up to speed quickly. 
- **PostgreSQL Tutorial by PostgreSQLTutorial.com**: This website offers a step-by-step tutorial for beginners to learn PostgreSQL. It covers various topics, including installation, basic SQL queries, data manipulation, and advanced concepts. You can find the tutorial here: [PostgreSQL Tutorial](https://www.postgresqltutorial.com/)
+If you are new to databases and PostgreSQL, the following resource can help you get up to speed quickly:
+
+**PostgreSQL Tutorial by PostgreSQLTutorial.com**: This website offers a step-by-step tutorial for beginners to learn PostgreSQL. It covers various topics, including installation, basic SQL queries, data manipulation, and advanced concepts. You can find the tutorial here: [PostgreSQL Tutorial](https://www.postgresqltutorial.com/)
+
+By following this tutorial, you will gain a solid foundation in working with PostgreSQL and be able to apply your knowledge to the development of your Node.js/Express app.
 :::
 
+### Update Nodejs/Express app to use PostgreSQL
+To update your Node.js/Express app to use PostgreSQL, follow these steps:
 
-### Github Repo
+1. Install the required dependencies:
+   - `pg` package: This is the PostgreSQL client library for Node.js.
+   - `dotenv` package: This allows us to load environment variables from a `.env` file.
+
+   You can install these dependencies by running the following command in your project directory:
+
+   ```bash
+   npm install pg dotenv
+   ```
+
+2. Create a `.env` file in your project directory. This file will store your environment variables. Add the following variables to the `.env` file:
+
+   ```dotenv
+   DB_HOST=your_database_host
+   DB_PORT=your_database_port
+   DB_NAME=your_database_name
+   DB_USER=your_database_user
+   DB_PASSWORD=your_database_password
+   ```
+
+   Replace `your_database_host`, `your_database_port`, `your_database_name`, `your_database_user`, and `your_database_password` with your actual PostgreSQL database connection details.
+
+3. Update your `server.js` file with the following code:
+
+   ```javascript
+   const express = require('express');
+   const bodyParser = require('body-parser');
+   const { Pool } = require('pg');
+   require('dotenv').config();
+
+   const app = express();
+   const port = 3002;
+
+   // Middleware
+   app.use(bodyParser.urlencoded({ extended: false }));
+   app.use(bodyParser.json());
+
+   // Create a connection pool
+   const pool = new Pool({
+     host: process.env.DB_HOST,
+     port: process.env.DB_PORT,
+     database: process.env.DB_NAME,
+     user: process.env.DB_USER,
+     password: process.env.DB_PASSWORD
+   });
+
+   // Test the database connection
+   pool.connect((err, client, release) => {
+     if (err) {
+       return console.error('Error acquiring client', err.stack);
+     }
+     console.log('Connected to PostgreSQL database');
+     client.release();
+   });
+
+   // Define your routes and handlers here...
+
+   // Start the server
+   app.listen(port, () => {
+     console.log(`Server is running on port ${port}`);
+   });
+   ```
+
+   This code sets up a connection pool using the `pg` package and the environment variables defined in the `.env` file. It also tests the database connection to ensure it's working properly.
+
+   **Note:** Make sure to replace the route definitions and handlers with your own code for CRUD operations and other routes specific to your application.
+
+4. Now you can run your Node.js/Express app using the following command:
+
+   ```bash
+   node server.js
+   ```
+
+   Your app will now be connected to PostgreSQL, and you can start building your CRUD operations and other functionality using the database.
+
+### Update public toilets CRUD operation 
+To update the CRUD operations for the PublicToilets app to use a PostgreSQL database, you need to make the following changes:
+
+1. Update the `server.js` file with the following code:
+
+   ```javascript
+   const express = require('express');
+   const bodyParser = require('body-parser');
+   const { Pool } = require('pg');
+   require('dotenv').config();
+
+   const app = express();
+   const port = 3002;
+
+   // Middleware
+   app.use(bodyParser.urlencoded({ extended: false }));
+   app.use(bodyParser.json());
+
+   // Create a connection pool
+   const pool = new Pool({
+     host: process.env.DB_HOST,
+     port: process.env.DB_PORT,
+     database: process.env.DB_NAME,
+     user: process.env.DB_USER,
+     password: process.env.DB_PASSWORD
+   });
+
+   // Test the database connection
+   pool.connect((err, client, release) => {
+     if (err) {
+       return console.error('Error acquiring client', err.stack);
+     }
+     console.log('Connected to PostgreSQL database');
+     client.release();
+   });
+
+   // Routes and handlers for CRUD operations
+   app.get('/api/toilets', (req, res) => {
+     // Implement the logic to fetch all toilets from the database using the pool.query() method
+   });
+
+   app.get('/api/toilets/:id', (req, res) => {
+     // Implement the logic to fetch a specific toilet by ID from the database using the pool.query() method
+   });
+
+   app.post('/api/toilets', (req, res) => {
+     // Implement the logic to create a new toilet in the database using the pool.query() method
+   });
+
+   app.put('/api/toilets/:id', (req, res) => {
+     // Implement the logic to update a specific toilet by ID in the database using the pool.query() method
+   });
+
+   app.delete('/api/toilets/:id', (req, res) => {
+     // Implement the logic to delete a specific toilet by ID from the database using the pool.query() method
+   });
+
+   // Start the server
+   app.listen(port, () => {
+     console.log(`Server is running on port ${port}`);
+   });
+   ```
+
+   Replace the placeholder comments with the actual implementation code for each route and CRUD operation using the `pool.query()` method provided by the `pg` package. The `pool.query()` method allows you to execute SQL queries against the PostgreSQL database.
+
+   **Note:** Make sure to handle errors, validate request data, and sanitize input to prevent SQL injection attacks.
+
+3. Implement the logic for each CRUD operation in the appropriate route handler. Here's an example of how you can implement the logic for fetching all toilets:
+
+   ```javascript
+   app.get('/api/toilets', (req, res) => {
+     pool.query('SELECT * FROM toilets', (err, result) => {
+       if (err) {
+         console.error('Error executing query', err.stack);
+         res.status(500).json({ error: 'An error occurred while fetching toilets' });
+       } else {
+         res.json(result.rows);
+       }
+     });
+   });
+   ```
+
+   This example executes a `SELECT` query to fetch all rows from the `toilets` table in the database and sends the results as JSON response to the client.
+
+4. Repeat the above step for each CRUD operation, updating the corresponding route handler to execute the appropriate SQL query.
+
+
+## Github Repo
 :::tip
   You can also refer to and clone the code up to this section from the GitHub repository using the `nodejs-backend` branch.
 
