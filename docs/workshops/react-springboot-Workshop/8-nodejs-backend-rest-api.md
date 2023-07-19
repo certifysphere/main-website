@@ -270,6 +270,64 @@ You can test these CRUD operations using tools like Postman or cURL by sending H
 
     Again, replace {id} with a number. This should delete the record with the provided id from the database.
 
+## Connect Express Server App With Database
+To connect our Express server app with a real database and perform CRUD operations, we need to choose and configure a database system. There are various options available, such as MySQL, PostgreSQL, MongoDB, etc. For this workshop, we will use PostgreSQL, which is a popular open-source relational database system.
+
+### Install PostgreSQL Database 
+
+Here are the instructions to install and set up PostgreSQL on your local system:
+
+Step 1: Download PostgreSQL
+- Visit the PostgreSQL download page: https://www.postgresql.org/download/
+- Select your operating system (Windows, macOS, or Linux) and download the appropriate installer.
+
+Step 2: Install PostgreSQL
+- Windows:
+  - Run the downloaded installer.
+  - Follow the installation wizard prompts.
+  - Choose the installation directory and provide a password for the default PostgreSQL user (postgres).
+  - Complete the installation process.
+
+- macOS:
+  - Open the downloaded disk image (.dmg) file.
+  - Double-click the PostgreSQL package file (.pkg) to run the installer.
+  - Follow the installation wizard prompts.
+  - Provide a password for the default PostgreSQL user (postgres) when prompted.
+  - Complete the installation process.
+
+- Linux:
+  - Refer to the official PostgreSQL documentation for detailed installation instructions specific to your Linux distribution.
+
+Step 3: Verify PostgreSQL Installation
+- Windows:
+  - Open the Start menu and search for "pgAdmin." Launch pgAdmin to open the graphical interface for managing PostgreSQL.
+  - You can also verify the installation by opening the Command Prompt and running the command: `psql --version`
+
+- macOS and Linux:
+  - Open the terminal and run the command: `psql --version`
+
+If the installation was successful, you should see the version number of PostgreSQL displayed in the terminal or graphical interface.
+
+Step 4: Set Up PostgreSQL Database
+- Windows:
+  - Open the Start menu and search for "pgAdmin." Launch pgAdmin to open the graphical interface.
+  - In the pgAdmin interface, expand the Servers section, then expand PostgreSQL, and finally expand Databases.
+  - Right-click on Databases and select Create -> Database.
+  - Enter a name for your database (e.g., "public_toilets") and click OK.
+
+- macOS and Linux:
+  - Open the terminal and run the command: `createdb public_toilets`
+
+Step 5: Connect to the PostgreSQL Database
+- Windows:
+  - In the pgAdmin interface, expand the Servers section, then expand PostgreSQL, and finally expand Databases.
+  - Right-click on your database name (e.g., "public_toilets") and select Connect.
+  - Provide the necessary credentials (username and password) if prompted.
+
+- macOS and Linux:
+  - Open the terminal and run the command: `psql -U postgres -d public_toilets`
+
+You are now connected to the PostgreSQL database.
 
 
 ### Github Repo
