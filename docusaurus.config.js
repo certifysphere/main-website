@@ -93,7 +93,7 @@ const config = {
             position: 'left',
             label: 'WorkShops',
           },
-          // {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/blog', label: 'Blog', position: 'left'},
           {
             type: 'docSidebar',
             sidebarId: 'bootcampSidebar',
