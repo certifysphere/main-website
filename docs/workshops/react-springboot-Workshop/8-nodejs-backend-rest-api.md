@@ -483,7 +483,9 @@ To update the CRUD operations for the PublicToilets app to use a PostgreSQL data
 
    **Note:** Make sure to handle errors, validate request data, and sanitize input to prevent SQL injection attacks.
 
-3. Implement the logic for each CRUD operation in the appropriate route handler. Here's an example of how you can implement the logic for fetching all toilets:
+3. Implement the logic for each CRUD operation in the appropriate route handler. 
+
+Here's an example of how you can implement the logic for fetching all toilets:
 
    ```javascript
    app.get('/api/toilets', (req, res) => {
@@ -499,6 +501,27 @@ To update the CRUD operations for the PublicToilets app to use a PostgreSQL data
    ```
 
    This example executes a `SELECT` query to fetch all rows from the `toilets` table in the database and sends the results as JSON response to the client.
+
+Create the POST route to store the public toilet in the database:   
+```javascript
+// Create a new public toilet
+// POST route to store a public toilet
+app.post('/public-toilets', async (req, res) => {
+  try {
+    const { name, location } = req.body;
+
+    const query = 'INSERT INTO toilets (name, location) VALUES ($1, $2) RETURNING *';
+    const values = [name, location];
+
+    const result = await pool.query(query, values);
+
+    res.status(201).json(result.rows[0]);
+  } catch (error) {
+    console.error('Error while adding a toilet:', error);
+    res.status(500).json({ error: 'Error while adding a toilet' });
+  }
+});
+  ```
 
 4. Repeat the above step for each CRUD operation, updating the corresponding route handler to execute the appropriate SQL query.
 
