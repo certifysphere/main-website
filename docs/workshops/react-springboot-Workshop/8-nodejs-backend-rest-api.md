@@ -351,7 +351,7 @@ To update your Node.js/Express app to use PostgreSQL, follow these steps:
    npm install pg dotenv
    ```
 
-2. Create a `.env` file in your project directory. This file will store your environment variables. Add the following variables to the `.env` file:
+2. Create a `.env` file in your project directory. This file will store your environment variables. Add the following variables to the `.env` file: [Learn more about ENV file here](/blog/dotenv-files-nodejs-expressjs).
 
    ```dotenv
    DB_HOST=your_database_host
@@ -524,6 +524,40 @@ app.post('/public-toilets', async (req, res) => {
   ```
 
 4. Repeat the above step for each CRUD operation, updating the corresponding route handler to execute the appropriate SQL query.
+
+Enabling CORS (Cross-Origin Resource Sharing) in an Express app allows the server to handle requests coming from different origins (domains) than the one the server is hosted on. This is important when you have a frontend application running on a different domain than your backend API.
+
+## Enable CORS
+To enable CORS (Cross-Origin Resource Sharing) in your Express app, you can use the `cors` middleware. First, you'll need to install the `cors` package: [Learn more about CORS here](../../../blog/enabling-cors-in-an-express-node.js-app)
+
+```bash
+npm install cors
+```
+
+Then, in your `server.js` file, add the following code to enable CORS:
+
+```javascript
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors'); // Import the cors middleware
+const pool = require('./db');
+
+const app = express();
+const port = 3002;
+
+app.use(cors()); // Enable CORS for all routes
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// ... Your other routes and middleware ...
+
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
+```
+
+By adding `app.use(cors())`, you are enabling CORS for all routes in your Express app. This will allow requests from any domain to access your backend API.
+
 
 
 ## Github Repo

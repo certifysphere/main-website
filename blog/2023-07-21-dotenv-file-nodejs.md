@@ -1,6 +1,6 @@
 ---
 slug: dotenv-files-nodejs-expressjs
-title: Environment Configurations in .env files - In Node.Js/Express.Js app
+title: dotEnv(.env) files in Express Node.js app
 authors:
   name: Vishal
 tags: [dotenv, node, express]
