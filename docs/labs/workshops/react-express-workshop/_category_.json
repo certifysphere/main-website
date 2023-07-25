@@ -1,0 +1,11 @@
+{
+  "label": "React-Express-Node.js WorkShop",
+  "link": {
+    "type": "generated-index",
+    "description": "The React Frontend, Express Node.js Backend Workshop is a hands-on training that will teach you how to build full-stack web applications using React.js and Node.js. 
+    You will learn how to use React to create user interfaces and how to use Express Node.js to create backend RESTful APIs.
+    The workshop will cover the following topics: React basics, Express.js, Node.js, Integrating ReactJS and Express, Building a full-stack web application, 
+    Deploy React frontend and Express backend application to AWS cloud.
+    The workshop is designed for developers who are familiar with JavaScript, and who want to learn how to build full-stack web applications using React and Node.js."
+  }
+}
