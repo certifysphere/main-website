@@ -528,7 +528,7 @@ app.post('/public-toilets', async (req, res) => {
 Enabling CORS (Cross-Origin Resource Sharing) in an Express app allows the server to handle requests coming from different origins (domains) than the one the server is hosted on. This is important when you have a frontend application running on a different domain than your backend API.
 
 ## Enable CORS
-To enable CORS (Cross-Origin Resource Sharing) in your Express app, you can use the `cors` middleware. First, you'll need to install the `cors` package: [Learn more about CORS here](../../../blog/enabling-cors-in-an-express-node.js-app)
+To enable CORS (Cross-Origin Resource Sharing) in your Express app, you can use the `cors` middleware. First, you'll need to install the `cors` package: [Learn more about CORS here](/blog/enabling-cors-in-an-express-node.js-app)
 
 ```bash
 npm install cors

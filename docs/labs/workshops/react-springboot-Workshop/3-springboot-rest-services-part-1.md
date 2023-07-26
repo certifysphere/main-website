@@ -16,7 +16,7 @@ This chapter is part of the ReactJS and Spring Boot workshop series. It can be f
 
 ### Setting up the Development Environment
 
-Before we start developing the Spring backend Rest Services, it's important to ensure that your local environment is set up for Java development. Please follow the instructions provided in the [**Install Java Development Tools**](../../tuts/tutorials/developer-environment-setup/install-java-development-tools) tutorial to set up your local system.
+Before we start developing the Spring backend Rest Services, it's important to ensure that your local environment is set up for Java development. Please follow the instructions provided in the [**Install Java Development Tools**](/docs/tuts/tutorials/developer-environment-setup/install-java-development-tools) tutorial to set up your local system.
 
 Once you have completed the setup and confirmed that your environment is ready for Java development, you can come back to this tutorial and continue with the next steps.
 
