@@ -6,12 +6,12 @@ tags:
   - nodejs
   - Rest API
 ---
-# Building a Node.js and Express.js Backend REST API for CRUD Operations
+# Build a Node.js and Express.js Backend REST API for CRUD Operations
 
-In this chapter, we will focus on creating a Node.js application that serves as a backend REST API for performing CRUD (Create, Read, Update, Delete) operations on a new School App.
+In this chapter, we will focus on creating a Express and Node.js application that serves as a backend REST API for performing CRUD (Create, Read, Update, Delete) operations on a new School Listing App.
 
 :::info
-This chapter is part of the ReactJS frontend application and Node.js backend REST API workshop series. While it can be followed independently to create a Node.js backend application, we suggest starting from the beginning to get the full context and benefit from the step-by-step learning experience. The complete workshop series can be found [here](1-introduction.md).
+This chapter is part of the React frontend application and Express/Node.js backend REST API workshop series. While it can be followed independently to create a Express/Node.js backend application, we suggest starting from the beginning to get the full context and benefit from the step-by-step learning experience. The complete workshop series can be found [here](1-introduction.md).
 :::
 
 ## Setting up the Development Environment
@@ -33,32 +33,30 @@ Before we start developing the Node.js backend REST Services, it's important to 
 - You should see the version numbers of Node.js and npm if the installation was successful.
 
 ### Step 3: Create a Project Directory
-- Choose a directory where you want to create your Node.js project and navigate to that directory.
-```bash 
-mkdir nodejs-backend-rest-api
-cd nodejs-backend-rest-api
-```
-:::note
-If you are following the workshop from the beginning, you can create the directory inside the `reactjs-nodejs-workshop` folder in the `workshops` repository.
-1. Clone the repository: Run the following command to clone the repository to your local machine:
-   ```bash
-   git clone https://github.com/certifysphere/workshops.git
-   ```
-2. Navigate to the workshop directory: Change to the `reactjs-nodejs-workshop` directory:
-   ```bash
-   cd workshops/reactjs-nodejs-workshop
-   ```
-Now you can proceed with creating the directory for your Node.js backend Rest Services inside the `reactjs-nodejs-workshop` directory.
-:::
+1) In the previous chapter, we created the project directory `react-express-workshop`. If it's not created yet, it can be created with the following command:
+  ```
+  mkdir react-express-workshop
+  ```
+2) Change the directory to `react-express-workshop`
+  ```
+  cd react-express-workshop
+  ```
+3) Create a subdirectory for the backend application and navigate to that directory:
 
+```bash 
+mkdir schools-listing-backend
+cd schools-listing-backend
+```
+4) Open the project in your IDE
+
+Open the project directory (schools-listing-backend) in Visual Studio Code or your preferred text editor or IDE.
 
 ### Step 4: Initialize a Node.js Project
-- Run the following command to initialize a new Node.js project inside `nodejs-backend-rest-api` directory:
+- Run the following command to initialize a new Node.js project inside the `schools-listing-backend` directory:
   ```
   npm init -y
   ```
-- This command creates a default package.json file with the project configuration.
-
+- This command creates a default `package.json` file with the project configuration.
 
 ### Step 5: Install Dependencies
 - Install Express.js: Express.js is a popular web framework for Node.js. Install it as a dependency for your project by running the following command:
@@ -66,7 +64,7 @@ Now you can proceed with creating the directory for your Node.js backend Rest Se
   ```
   npm install express
   ```
-  This command installs Express.js and adds it as a dependency in the package.json file.
+  This command installs Express.js and adds it as a dependency in the `package.json` file.
 
 ### Step 6: Create a Basic Server
 - Create a new file named `server.js` in your project directory. This file will serve as the entry point for your application.
@@ -76,7 +74,7 @@ Now you can proceed with creating the directory for your Node.js backend Rest Se
   ```javascript
   const express = require('express');
   const app = express();
-  const port = 3000; // Replace with your desired port number
+  const port = 3002; // Replace with your desired port number
 
   // Define a route
   app.get('/', (req, res) => {
@@ -99,15 +97,15 @@ Now you can proceed with creating the directory for your Node.js backend Rest Se
 - You should see a message indicating that the server is running on the specified port.
 
 ### Step 8: Test the Server
-- Open a web browser and navigate to http://localhost:3000. You should see the message "Hello, world!" displayed in the browser, indicating that the server is running successfully.
+- Open a web browser and navigate to http://localhost:3002. You should see the message "Hello, world!" displayed in the browser, indicating that the server is running successfully.
 
 Congratulations! You have set up your Node.js development environment and created a basic Express server. You can now proceed with developing the Node.js backend REST Services by adding routes, controllers, and other necessary components to build your REST API.
 
-## REST API For School App
+## REST API For Schools Listing App
 
-In the previous section, we created a basic server app using Express.js that returns "Hello World!" when accessing the root URL of the server app (http://localhost:3000). Now, we will add new endpoints to the `server.js` file to enable CRUD operations (Create, Retrieve, Update, Delete) for our School App or any other server REST API app.
+In the previous section, we created a basic server app using Express.js that returns "Hello World!" when accessing the root URL of the server app (http://localhost:3002). Now, we will add new endpoints to the `server.js` file to enable CRUD operations (Create, Retrieve, Update, Delete) for our School App.
 
-### Updated server.js Code
+### Updated `server.js` Code
 
 Replace the code in the `server.js` file with the following:
 
@@ -116,7 +114,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
-const port = 3000;
+const port = 3002;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -124,8 +122,8 @@ app.use(bodyParser.json());
 
 // School Data (replace this with your database or data source)
 let schools = [
-  { id: 1, name: 'School 1', address: 'Address 1', city: 'City 1', state: 'State 1', country: 'Country 1', zipCode: '12345' },
-  { id: 2, name: 'School 2', address: 'Address 2', city: 'City 2', state: 'State 2', country: 'Country 2', zipCode: '67890' },
+  { id: 1, name: 'School 1', grades: '1-5', city: 'City 1', state: 'State 1', country: 'Country 1', zipCode: '12345' },
+  { id: 2, name: 'School 2', grades: '6-8', city: 'City 2', state: 'State 2', country: 'Country 2', zipCode: '67890' },
 ];
 
 // Get all schools
@@ -147,9 +145,9 @@ app.get('/schools/:id', (req, res) => {
 
 // Create a new school
 app.post('/schools', (req, res) => {
-  const { name, address, city, state, country, zipCode } = req.body;
+  const { name, grades, city, state, country, zipCode } = req.body;
   const id = schools.length + 1;
-  const newSchool = { id, name, address, city, state, country, zipCode };
+  const newSchool = { id, name, grades, city, state, country, zipCode };
 
   schools.push(newSchool);
 
@@ -159,12 +157,12 @@ app.post('/schools', (req, res) => {
 // Update an existing school
 app.put('/schools/:id', (req, res) => {
   const id = parseInt(req.params.id);
-  const { name, address, city, state, country, zipCode } = req.body;
+  const { name, grades, city, state, country, zipCode } = req.body;
   const school = schools.find((school) => school.id === id);
 
   if (school) {
     school.name = name;
-    school.address = address;
+    school.grades = grades;
     school.city = city;
     school.state = state;
     school.country = country;
@@ -178,13 +176,13 @@ app.put('/schools/:id', (req, res) => {
 
 // Delete a school
 app.delete('/schools/:id', (req, res) => {
-
-
   const id = parseInt(req.params.id);
   const index = schools.findIndex((school) => school.id === id);
 
   if (index !== -1) {
-    const deletedSchool = schools.splice(index, 1);
+   
+
+ const deletedSchool = schools.splice(index, 1);
     res.json(deletedSchool[0]);
   } else {
     res.status(404).json({ message: 'School not found' });
@@ -193,7 +191,7 @@ app.delete('/schools/:id', (req, res) => {
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+  console.log(`Server running on http://localhost:${port}`);
 });
 ```
 
@@ -206,6 +204,66 @@ This updated `server.js` file includes the following CRUD endpoints:
 - DELETE `/schools/:id`: Deletes a school.
 
 This code initializes an Express.js server and sets up middleware to handle request body parsing. It prepares the server to handle REST API endpoints for the School App use case.
+
+If you attempt to run a frontend React app and access data from a backend API, you may encounter an error (Check in Chrome Developer Tools). This error is due to the browser's default security policy, which restricts Cross-Origin Resource Sharing (CORS). CORS is a security feature implemented by web browsers to prevent unauthorized access to resources on a different domain.
+
+When your React app, served from one domain (e.g., localhost:3000), tries to make API requests to a backend server on another domain (e.g., localhost:3002/api), the browser blocks the request by default. This behavior is intended to protect users from potential security risks.
+
+### Enable CORS
+Enabling CORS (Cross-Origin Resource Sharing) in an Express app allows the server to handle requests coming from different origins (domains) than the one the server is hosted on. This is important when you have a frontend application running on a different domain than your backend API.
+
+To enable CORS in your Express app, you can use the `cors` middleware. First, you'll need to install the `cors` package:
+
+```bash
+npm install cors
+```
+
+Then, in your `server.js` file, add the following code to enable CORS:
+
+```javascript
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors'); // Import the cors middleware
+
+const app = express();
+const port = 3002;
+
+app.use(cors()); // Enable CORS for all routes
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// ... Your other routes and middleware ...
+
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
+```
+
+By adding `app.use(cors())`, you are enabling CORS for all routes in your Express app. This will allow requests from any domain to access your backend API.
+
+### Run Frontend React and Backend Express Apps
+
+1) Navigate to the `schools-listing-frontend` directory and run the frontend React app:
+
+```
+cd schools-listing-frontend
+npm start
+```
+
+2) Navigate to the `schools-listing-backend` directory and run the backend Express Rest API app:
+
+```
+cd schools-listing-backend
+node server.js
+```
+
+3) Open your web browser and go to the frontend app URL (http://localhost:3000). If everything works as expected, you should see the application running, and it should be able to interact with the backend API.
+
+4) Test all CRUD (Create, Read, Update, Delete) operations on the frontend app. You can perform actions like adding new schools, updating existing schools, deleting schools, and viewing the list of schools.
+
+Remember to ensure that the backend API and frontend React app are correctly configured to communicate with each other. The frontend app should be making API requests to the correct URL where the backend server is running. If there are any issues, check the console for error messages or the network tab in the browser's developer tools to see the API requests and responses.
+
+By following these steps, you should have both the frontend and backend applications up and running, and you can interact with the Schools Listing App through your browser.
 
 ## Database
 
@@ -302,7 +360,7 @@ To update your Node.js/Express app to use MongoDB, follow these steps:
    require('dotenv').config();
 
    const app = express();
-   const port = 3000;
+   const port = 3002;
 
    // Middleware
    app.use(bodyParser.urlencoded({ extended: false }));
@@ -348,137 +406,9 @@ To update your Node.js/Express app to use MongoDB, follow these steps:
    });
    ```
 
-   This example uses the `find` method to fetch all documents
-
- from the `schools` collection in the MongoDB database and sends the results as JSON response to the client.
+   This example uses the `find` method to fetch all documents from the `schools` collection in the MongoDB database and sends the results as a JSON response to the client.
 
 5. Repeat the above step for each CRUD operation, updating the corresponding route handler to perform the appropriate database operations.
-
-
-```javascript
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const { MongoClient, ObjectId } = require('mongodb');
-require('dotenv').config();
-
-const app = express();
-const port = 3000;
-
-app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
-const mongoUrl = process.env.MONGO_DB_URL;
-const client = new MongoClient(mongoUrl, { useUnifiedTopology: true });
-
-client.connect((err) => {
-  if (err) {
-    console.error('Error connecting to MongoDB:', err);
-    return;
-  }
-  console.log('Connected to MongoDB database');
-});
-
-// Fetch all schools
-app.get('/schools', (req, res) => {
-  const db = client.db();
-  const schoolsCollection = db.collection('schools');
-  schoolsCollection.find({}).toArray((err, schools) => {
-    if (err) {
-      console.error('Error fetching schools:', err);
-      res.status(500).json({ error: 'An error occurred while fetching schools' });
-    } else {
-      res.json(schools);
-    }
-  });
-});
-
-// Fetch a specific school by ID
-app.get('/schools/:id', (req, res) => {
-  const db = client.db();
-  const schoolsCollection = db.collection('schools');
-  const schoolId = req.params.id;
-
-  schoolsCollection.findOne({ _id: ObjectId(schoolId) }, (err, school) => {
-    if (err) {
-      console.error('Error fetching school:', err);
-      res.status(500).json({ error: 'An error occurred while fetching the school' });
-    } else if (!school) {
-      res.status(404).json({ message: 'School not found' });
-    } else {
-      res.json(school);
-    }
-  });
-});
-
-// Create a new school
-app.post('/schools', (req, res) => {
-  const db = client.db();
-  const schoolsCollection = db.collection('schools');
-  const { name, location, capacity } = req.body;
-
-  const newSchool = {
-    name,
-    location,
-    capacity,
-  };
-
-  schoolsCollection.insertOne(newSchool, (err, result) => {
-    if (err) {
-      console.error('Error creating a new school:', err);
-      res.status(500).json({ error: 'An error occurred while creating a new school' });
-    } else {
-      res.status(201).json(result.ops[0]);
-    }
-  });
-});
-
-// Update an existing school
-app.put('/schools/:id', (req, res) => {
-  const db = client.db();
-  const schoolsCollection = db.collection('schools');
-  const schoolId = req.params.id;
-  const { name, location, capacity } = req.body;
-
-  schoolsCollection.updateOne(
-    { _id: ObjectId(schoolId) },
-    { $set: { name, location, capacity } },
-    (err, result) => {
-      if (err) {
-        console.error('Error updating school:', err);
-        res.status(500).json({ error: 'An error occurred while updating the school' });
-      } else if (result.modifiedCount === 0) {
-        res.status(404).json({ message: 'School not found' });
-      } else {
-        res.json({ message: 'School updated successfully' });
-      }
-    }
-  );
-});
-
-// Delete a school
-app.delete('/schools/:id', (req, res) => {
-  const db = client.db();
-  const schoolsCollection = db.collection('schools');
-  const schoolId = req.params.id;
-
-  schoolsCollection.deleteOne({ _id: ObjectId(schoolId) }, (err, result) => {
-    if (err) {
-      console.error('Error deleting school:', err);
-      res.status(500).json({ error: 'An error occurred while deleting the school' });
-    } else if (result.deletedCount === 0) {
-      res.status(404).json({ message: 'School not found' });
-    } else {
-      res.json({ message: 'School deleted successfully' });
-    }
-  });
-});
-
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
-```
 
 In this updated code, we have added the following routes and handlers for the remaining CRUD operations:
 
@@ -487,45 +417,13 @@ In this updated code, we have added the following routes and handlers for the re
 3. `PUT /schools/:id`: Updates an existing school.
 4. `DELETE /schools/:id`: Deletes a school.
 
-These routes use the `ObjectId` constructor from the
+These routes use the `ObjectId` constructor from the `mongodb` module to convert the `
 
- `mongodb` module to convert the `id` parameter into a MongoDB ObjectId, which is used to uniquely identify documents in MongoDB.
+id` parameter into a MongoDB ObjectId, which is used to uniquely identify documents in MongoDB.
 
-Now you have a complete Node.js and Express backend API with MongoDB integration that supports all CRUD operations for managing schools. You can test these routes using tools like Postman or cURL to send HTTP requests to the corresponding endpoints and verify that the CRUD operations are working as expected.
 
-## Enable CORS
-Enabling CORS (Cross-Origin Resource Sharing) in an Express app allows the server to handle requests coming from different origins (domains) than the one the server is hosted on. This is important when you have a frontend application running on a different domain than your backend API.
 
-To enable CORS in your Express app, you can use the `cors` middleware. First, you'll need to install the `cors` package:
-
-```bash
-npm install cors
-```
-
-Then, in your `server.js` file, add the following code to enable CORS:
-
-```javascript
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors'); // Import the cors middleware
-
-const app = express();
-const port = 3000;
-
-app.use(cors()); // Enable CORS for all routes
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
-// ... Your other routes and middleware ...
-
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
-```
-
-By adding `app.use(cors())`, you are enabling CORS for all routes in your Express app. This will allow requests from any domain to access your backend API.
-
-## Github Repo
+## GitHub Repo
 
 You can also refer to and clone the code up to this section from the GitHub repository using the `new-school-app` branch.
 
@@ -544,3 +442,4 @@ cd workshops/react-express-workshop/new-school-app-backend/
 ```
 
 With the updated Node.js backend code and MongoDB integration, you have a solid foundation to build the backend API for the new school app. You can now proceed with building the frontend React app and connecting it to the backend API to create a complete school management system. Happy coding!
+

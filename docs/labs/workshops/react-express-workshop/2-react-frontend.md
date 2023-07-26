@@ -6,29 +6,27 @@ tags:
   - Install Node.js
   - React Freontend
 ---
-# Chapter 1: Building a Simple React Application
 
-In this chapter, we will focus on building a simple ReactJS UI app with basic CRUD (Create, Read, Update, and Delete) operations. The app will be about **Schools Listing** where users can add, update, remove schools' details such as school name, grades, city, state, country, zip code, and view the list of schools. We will use an in-memory array in the UI app for CRUD operations.
+# Build a Schools Listing React Application
+
+In this chapter, we will focus on building a simple React UI app with basic CRUD (Create, Read, Update, and Delete) operations. The app will be about **Schools Listing** where users can add, update, remove schools' details such as school name, grades, city, state, country, zip code, and view the list of schools. We will use a real MongoDB database for CRUD operations.
 
 :::tip
 This workshop focuses on providing you with hands-on experience in building a complete solution for Front-End UI, Backend API, database, and cloud deployment. While we cover the technologies used in this workshop, we may not be able to delve into each technology in depth. Therefore, we recommend further studying all the technologies and frameworks by referring to their documentation. Refer to [Further Learning Section](#further-learning) for resources.
 :::
 
 ## 1. Setting up the Development Environment
-Before we start building our app, we need to set up the development environment. To build the UI app, we will use Node.js and ReactJS. Follow these steps to set up the development environment:
+Before we start building our app, we need to set up the development environment. To build the UI app, we will use Node.js and React.js. Follow these steps to set up the development environment:
 
 ### Install Node.JS
-1. Open your terminal or command prompt.
+1. Install `Node.js` from the official website if you haven't already. You can download it from here: https://nodejs.org/en/download/.
+1. To verify that `Node.js` has been installed successfully, open your terminal and run the following command:
+  ```
+  node -v
+  ```
+  If the command returns the version of `Node.js`, it means that `Node.js` has been installed correctly.
 
-2. Install `Node.js` from the official website if you haven't already. You can download it from here: https://nodejs.org/en/download/.
-
-3. To verify that `Node.js` has been installed successfully, open your terminal and run the following command:
-   ```
-   node -v
-   ```
-   If the command returns the version of `Node.js`, it means that `Node.js` has been installed correctly.
-
-4. Install `npx` globally using `npm` (Node Package Manager) by running the following command:
+1. Install `npx` globally using `npm` (Node Package Manager) by running the following command:
   :::info
   npx is a command-line utility built into npm (Node Package Manager) version 5.2 or later. It is used to execute Node.js packages without having to install them globally. 
   :::
@@ -37,36 +35,39 @@ Before we start building our app, we need to set up the development environment.
    npm install -g npx
    ```
 
-### Create ReactJs App
-1. Create a new ReactJS app named `schools-listing-app` by running the following command:
-   ```
-   npx create-react-app schools-listing-app
-   ```
-   If you get the following message, say yes and enter.
+### Create Project Directory
+1. Create a new directory `react-express-workshop` by running the following command:
+  ```
+  mkdir react-express-workshop
+  ```
+1. Change the directory to `react-express-workshop`
+  ```
+  cd react-express-workshop
+  ```
+
+### Create React App
+1. Create a new React app named `schools-listing-frontend` by running the following command:
+  ```
+  npx create-react-app schools-listing-frontend
+  ```
+  If you get the following message, say yes and enter.
    
-   `Need to install the following packages: create-react-app@x.x.x
+  `Need to install the following packages: create-react-app@x.x.x
     Ok to proceed? (y) y`
 
-2. Once the app is created, navigate to the `schools-listing-app` directory by running the following command:
+2. Once the app is created, navigate to the `schools-listing-frontend` directory by running the following command:
    ```
-   cd schools-listing-app
-   ```
-
-3. Install the necessary dependencies.
-   To install the necessary dependencies, run the following command:
-   ```
-   npm install
+   cd schools-listing-frontend
    ```
 
 ### Run React App
-
-Once you have generated the initial ReactJS app, navigate to the root directory of the app using the command prompt or terminal and enter the following command:
+Once you have generated the initial React app, navigate to the root directory of the app using the command prompt or terminal and enter the following command:
   ```
   npm start
   ```
   This will start the development server and open the app in your default browser at [http://localhost:3000](http://localhost:3000). You can now start making changes to the app and see the changes reflected in the browser in real-time.
 
-  If the app is running, you should see the ReactJS default page in the browser.
+  If the app is running, you should see the React default page in the browser.
 
   ![React Running app](./img/reactinitial-running.jpg)
 
@@ -76,119 +77,16 @@ To stop the development server, you can press `CTRL + C` in the command prompt o
 
 ### Open project in IDE
 
-Open the project directory (schools-listing-app) in Visual Studio Code or your preferred text editor or IDE. You should see the files as shown below.
+Open the project directory (schools-listing-frontend) in Visual Studio Code or your preferred text editor or IDE.
 
-![VS Code initial Code Structure](./img/vscode-initial-setup.jpg)
+--------------
 
-### Github Repo
-:::note
-You can refer to and clone the code up to this section from the GitHub repository using the `initial-react-app` branch.
-
-To clone the repository, you can use the following command:
-
-```bash
-git clone --branch initial-react-app https://github.com/your-github-username/schools-listing-app.git
-```
-
-This will clone the repository and checkout the `initial-react-app` branch, which contains the code up to this section of the workshop.
-
-You can then navigate to the `schools-listing-app` directory to access the React app code:
-
-```bash
-cd schools-listing-app/
-```
-
-From there, you can explore the code and continue with the workshop.
-:::
-
-That's it for this section! 🎉 We now have a new ReactJS app named `schools-listing-app` running. In the next section, we will add actual UI components.
-
-
-## 2. Create the Schools UI components
-Now that we have set up our development environment, let's start creating the UI components for our app. In ReactJS, UI components are created using JSX syntax, which allows you to write HTML-like code in JavaScript.
+## 2. Create the Schools Listing UI components
+Now that we have set up our development environment, let's start creating the UI components for our app. In React, UI components are created using JSX syntax, which allows you to write HTML-like code in JavaScript.
 
 We will create the following components for our app:
 
 - App.js - The main component that renders other components
-- mock-schools-service.js - Provides methods for managing schools data
-
-### Mock Backend Service 
-This MockSchoolsService class provides methods for managing schools data, such as retrieving the list of schools, adding a new school, deleting a school by its id, and updating a school by its id. It utilizes a singleton pattern to ensure only one instance of the service class is created throughout the application.
-
-:::note
-Please note that this is a mock service intended for local testing and will be replaced with an actual service in the subsequent sections of your application.
-:::
-
-The provided code snippet represents a singleton JavaScript class, MockSchoolsService, which acts as a mock service for testing purposes.
-
-```javascript
-/**
- * Singleton mock service for handling schools data.
- */
-export default class MockSchoolsService {
-  static instance;
-
-  // Array to store schools data
-  schools = [];
-
-  /**
-   * Returns the singleton instance of the MockSchoolsService class.
-   * If the instance doesn't exist, it creates a new one.
-   * @returns {MockSchoolsService} The singleton instance.
-   */
-  static getInstance() {
-    if (!MockSchoolsService.instance) {
-      MockSchoolsService.instance = new MockSchoolsService();
-    }
-    return MockSchoolsService.instance;
-  }
-
-  /**
-   * Retrieves the list of schools.
-   * @returns {Promise<Array>} A promise that resolves to the array of schools.
-   */
-  getSchools()
-
- {
-    return Promise.resolve(this.schools);
-  }
-
-  /**
-   * Adds a new school to the list.
-   * @param {Object} school - The school object to be added.
-   * @returns {Promise<Object>} A promise that resolves to the added school object.
-   */
-  addSchool(school) {
-    // Get the maximum id from the existing schools
-    const maxId = this.schools.reduce((max, obj) => Math.max(max, obj.id), 0);
-
-    // Assign a new id to the school
-    school.id = maxId + 1;
-
-    // Add the school to the list
-    this.schools.push(school);
-
-    return Promise.resolve(school);
-  }
-
-  /**
-   * Deletes a school from the list by its id.
-   * @param {number} id - The id of the school to be deleted.
-   */
-  deleteSchool(id) {
-    this.schools = this.schools.filter((school) => school.id !== id);
-  }
-
-  /**
-   * Updates a school in the list by its id.
-   * @param {number} id - The id of the school to be updated.
-   * @param {Object} school - The updated school object.
-   */
-  updateSchool(id, school) {
-    this.schools = this.schools.map((item) => (item.id === id ? school : item));
-  }
-}
-```
 
 ### App.js component
 The App.js file serves as the entry point and main component of a React application. It is responsible for rendering the user interface and managing the state and behavior of the application.
@@ -196,77 +94,88 @@ The App.js file serves as the entry point and main component of a React applicat
 The App.js file typically contains the root component that represents the entire application. It defines the structure and layout of the application's UI by composing and rendering other components. It also manages the application's state and handles any necessary data fetching, updates, or event handling.
 
 :::info
-We are adding all of the initial UI components in the same App.js file for simplicity. We are not using any CSS or UI framework at the moment. However, in later chapters, we will refactor our code by moving these components into separate files to improve organization and modularity. See [Further Learning](#further-learning) section for UI and Javascript frameworks.
+We are adding all of the initial UI components in the same App.js file for simplicity. We are not using any CSS or UI framework at the moment. However, in later chapters, we will refactor our code by moving these components into separate files to improve organization and modularity. See [Further Learning](#further-learning) section for UI and JavaScript frameworks.
 :::
+
 
 ```javascript
 import React, { useState, useEffect } from 'react';
-import MockSchoolsService from './service/mock-schools-service';
+
+const API_BASE_URL = 'http://localhost:3002'; // Update this with your backend API URL
 
 const App = () => {
   // State variables
   const [schools, setSchools] = useState([]);
   const [selectedSchool, setSelectedSchool] = useState(null);
 
-  // Mock service instance
-  const service = MockSchoolsService.getInstance();
-
-  // Fetches schools data when the component mounts
+  // Fetch schools data when the component mounts
   useEffect(() => {
     getSchools();
   }, []);
 
-  // Fetches the list of schools
+  // Function to fetch the list of schools from the backend
   const getSchools = async () => {
     try {
-      const list = await service.getSchools();
-      setSchools(list);
+      const response = await fetch(`${API_BASE_URL}/schools`);
+      const data = await response.json();
+      setSchools(data);
     } catch (error) {
       console.log('Error fetching schools:', error);
     }
   };
 
-  // Deletes a school
+  // Function to delete a school from the backend
   const deleteSchool = async (id) => {
     try {
-      await service.deleteSchool(id);
-      getSchools();
+      await fetch(`${API_BASE_URL}/schools/${id}`, {
+        method: 'DELETE',
+      });
+      getSchools(); // Refresh the schools list after deletion
     } catch (error) {
       console.log('Error deleting school:', error);
     }
   };
 
-  // Updates a school
+  // Function to update a school in the backend
   const updateSchool = async (selectedSchool) => {
     try {
-      await service.updateSchool(selectedSchool.id, selectedSchool);
-      getSchools();
+      await fetch(`${API_BASE_URL}/schools/${selectedSchool.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(selectedSchool),
+      });
+      getSchools(); // Refresh the schools list after update
     } catch (error) {
       console.log('Error updating school:', error);
     }
   };
 
-  // Adds a new school
+  // Function to add a new school to the backend
   const addSchool = async (school) => {
     try {
-      await service.addSchool(school);
-      setSchools([]);
-      getSchools();
+      await fetch(`${API_BASE_URL}/schools`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(school),
+      });
+      getSchools(); // Refresh the schools list after addition
     } catch (error) {
       console.log('Error adding school:', error);
     }
   };
 
-  // Renders the table of schools
+  // Function to render the table of schools
   const renderSchools = () => {
-    // Display message when schools array is empty
     if (!schools || schools.length === 0) {
       return <p>No Data Found</p>;
     }
 
     return (
       <table>
-        {/* Table headers */}
         <thead>
           <tr>
             <th>Select</th>
@@ -279,7 +188,6 @@ const App = () => {
             <th>Actions</th>
           </tr>
         </thead>
-        {/* Table body */}
         <tbody>
           {schools.map((school) => (
             <tr key={school.id}>
@@ -308,7 +216,7 @@ const App = () => {
     );
   };
 
-  // Handles the form submission for adding a school
+  // Function to handle the form submission for adding a school
   const handleSubmit = (event) => {
     event.preventDefault();
     const { name, grades, city, state, country, zipCode } = event.target.elements;
@@ -320,11 +228,11 @@ const App = () => {
       country: country.value,
       zipCode: zipCode.value,
     };
-    addSchool(school);
+    addSchool(school); // Add the new school to the backend
     event.target.reset();
   };
 
-  // Display Add a new School form
+  // Function to render the Add School form
   const renderAddSchoolForm = () => {
     return (
       <div>
@@ -342,8 +250,9 @@ const App = () => {
     );
   };
 
-  // Display Update a School form
+  // Function to render the Update School form
   const renderUpdateSchoolForm = () => {
+    // Function to handle input changes in the Update School form
     const handleChange = (event) => {
       setSelectedSchool({
         ...selectedSchool,
@@ -354,7 +263,8 @@ const App = () => {
     return (
       <>
         <h2>Update School</h2>
-        <input type='hidden' defaultValue={selectedSchool.id} />
+        {/* Use the ID of the selected school */}
+        <input type='hidden' name='id' defaultValue={selectedSchool.id} />
         <input
           name='name'
           value={selectedSchool.name}
@@ -375,9 +285,7 @@ const App = () => {
         />
         <input
           name='state'
-          value={
-
-selectedSchool.state}
+          value={selectedSchool.state}
           onChange={handleChange}
           placeholder='State'
         />
@@ -399,14 +307,19 @@ selectedSchool.state}
     );
   };
 
+  // Render the main UI of the app
   return (
     <div>
       <h1>Schools Listing App</h1>
       <div>
+        {/* Render the table of schools */}
         {renderSchools()}
+        {/* Render the Add School form */}
         {selectedSchool ? (
+          // Render the Update School form when a school is selected
           renderUpdateSchoolForm()
         ) : (
+          // Render the Add School form when no school is selected
           renderAddSchoolForm()
         )}
       </div>
@@ -415,11 +328,37 @@ selectedSchool.state}
 };
 
 export default App;
+
 ```
+
+Explanation:
+
+1. We import the necessary dependencies from React, including `useState` and `useEffect` hooks, which allow us to manage state and handle side effects respectively.
+
+2. We set the `API_BASE_URL` constant to the backend API URL. Make sure to update this URL with the correct backend API URL that you are using.
+
+3. We define the `App` component, which serves as the main component of our React application.
+
+4. Inside the `App` component, we define state variables using the `useState` hook: `schools` to store the list of schools retrieved from the backend, and `selectedSchool` to keep track of the school selected for update.
+
+5. We use the `useEffect` hook to fetch the list of schools from the backend API when the component mounts. The `getSchools` function is an asynchronous function that uses the Fetch API to perform a GET request to the backend endpoint `/schools`. The received data is then set to the `schools` state.
+
+6. We define three functions for interacting with the backend API: `deleteSchool`, `updateSchool`, and `addSchool`. These functions use the Fetch API to perform DELETE, PUT, and POST requests, respectively, to the corresponding backend endpoints for managing schools.
+
+7. The `renderSchools` function is responsible for rendering the table of schools. It checks if there are schools available and then maps through the `schools` array to create table rows. Each row displays school information, and there is a radio button for selecting a school for update and a delete button for deleting the school.
+
+8. The `handleSubmit` function handles the form submission for adding a new school. It extracts the form values and creates a new school object. Then, it calls the `addSchool` function to add the new school to the backend.
+
+9. The `renderAddSchoolForm` function renders the form for adding a new school. It displays input fields for the school's name, grades, city, state, country, and zip code, along with a submit button.
+
+10. The `renderUpdateSchoolForm` function renders the form for updating a selected school. It pre-fills the form fields with the existing school information, and it updates the `selectedSchool` state when there are changes in the input fields. The form includes an update button to trigger the `updateSchool` function and a cancel button to clear the selected school.
+
+11. Finally, the main UI is rendered inside the `return` statement. It displays the header "Schools Listing App" and renders the list of schools and either the Add School form or the Update School form based on whether a school is selected or not. If a school is selected, the Update School form is shown; otherwise, the Add School form is shown.
+
 
 ## 3. Running the Application
 
-To run the application, open a terminal or command prompt, navigate to the root directory of the `schools-listing-app` project, and execute the following command:
+To run the application, open a terminal or command prompt, navigate to the root directory of the `schools-listing-frontend` project, and execute the following command:
 
 ```bash
 npm start
@@ -427,14 +366,19 @@ npm start
 
 This will start the development server, and the application will open in your default web browser at [http://localhost:3000](http://localhost:3000).
 
+At this point, you should see the heading "Schools Listing App" and a message saying "No Data Found" on the web page. This is expected because we haven't built the backend REST API yet. The frontend React app is currently trying to fetch data from the backend, but since the API endpoints don't exist, it shows the "No Data Found" message.
+
+In the next chapter, we will build the backend REST API using Node.js, Express, and MongoDB. Once the backend API is ready, we will come back to the frontend React app and connect it to the backend to perform CRUD operations on the schools data.
+
+Stay tuned for the next chapter, where we'll dive into building the backend REST API!
+
 ## Conclusion
 
-Congratulations! You have successfully built a simple React application for managing schools' data with basic CRUD operations. In this tutorial, you learned how to set up a development environment, create React components, use React hooks, manage state, and interact with a mock service to perform CRUD operations.
+Congratulations! You have successfully built a simple React application for managing schools' data with basic CRUD operations. In this tutorial, you learned how to set up a development environment, create React components, use React hooks, manage state, and interact with a real MongoDB database using the Fetch API to perform CRUD operations.
 
 Remember, this is just a basic example, and there's much more you can do to enhance this application. Some possible improvements include:
 
 - Styling the UI with CSS or using UI libraries like Bootstrap or Material UI.
-- Connecting the front-end to a real backend API to persist data.
 - Implementing user authentication and authorization to secure the application.
 - Adding form validation for better user experience.
 
@@ -449,10 +393,5 @@ To continue learning and improving your React skills, consider exploring the fol
 - React Router: https://reactrouter.com/web/guides/quick-start
 - CSS Styling: https://developer.mozilla.org/en-US/docs/Learn/CSS
 - UI Frameworks: Bootstrap (https://getbootstrap.com/) and Material UI (https://mui.com/)
-- React State Management (Redux): https://redux.js.org/introduction/getting-started
 - Real Backend with Node.js and Express: https://expressjs.com/
 - Database with MongoDB: https://www.mongodb.com/
-- Deployment on Cloud Platforms: AWS, Azure, or Heroku.
-
-Remember that practice is key to mastering any technology, so keep building and experimenting with different projects to strengthen your skills. Happy coding!
-
