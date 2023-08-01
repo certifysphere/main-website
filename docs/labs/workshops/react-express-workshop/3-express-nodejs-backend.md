@@ -261,7 +261,7 @@ node server.js
 
 4) Test all CRUD (Create, Read, Update, Delete) operations on the frontend app. You can perform actions like adding new schools, updating existing schools, deleting schools, and viewing the list of schools.
 
-Remember to ensure that the backend API and frontend React app are correctly configured to communicate with each other. The frontend app should be making API requests to the correct URL where the backend server is running. If there are any issues, check the console for error messages or the network tab in the browser's developer tools to see the API requests and responses.
+Remember to ensure that the backend API and frontend React app are correctly configured to communicate with each other. The frontend app should be making API requests to the correct URL where the backend server is running. If there are any issues, check the browser console for error messages or the network tab in the browser's developer tools to see the API requests and responses.
 
 By following these steps, you should have both the frontend and backend applications up and running, and you can interact with the Schools Listing App through your browser.
 
@@ -331,7 +331,7 @@ By following this documentation, you will gain a solid foundation in working wit
 :::
 
 ### Update Node.js/Express app to use MongoDB
-To update your Node.js/Express app to use MongoDB, follow these steps:
+To update backend Express app to use MongoDB, follow these steps:
 
 1. Install the required dependencies:
    - `mongodb` package: This is the official MongoDB driver for Node.js.
@@ -339,6 +339,10 @@ To update your Node.js/Express app to use MongoDB, follow these steps:
 
    You can install these dependencies by running the following command in your project directory:
 
+  ```bash
+   #navigate to backend diectory if not already inside this directory
+   cd schools-listing-backend
+  ```
    ```bash
    npm install mongodb dotenv
    ```
@@ -356,6 +360,9 @@ To update your Node.js/Express app to use MongoDB, follow these steps:
    ```javascript
    const express = require('express');
    const bodyParser = require('body-parser');
+   
+   const cors = require('cors'); // Import the cors middleware
+
    const { MongoClient } = require('mongodb');
    require('dotenv').config();
 
@@ -365,6 +372,7 @@ To update your Node.js/Express app to use MongoDB, follow these steps:
    // Middleware
    app.use(bodyParser.urlencoded({ extended: false }));
    app.use(bodyParser.json());
+   app.use(cors()); // Enable CORS for all routes
 
    // MongoDB connection settings
    const mongoUrl = process.env.MONGO_DB_URL;
@@ -425,21 +433,19 @@ id` parameter into a MongoDB ObjectId, which is used to uniquely identify docume
 
 ## GitHub Repo
 
-You can also refer to and clone the code up to this section from the GitHub repository using the `new-school-app` branch.
+You can also refer to and clone the code up to this section from the GitHub repository using the `express-backend-mongo-db` branch.
 
 To clone the repository, you can use the following command:
 
 ```bash
-git clone --branch new-school-app https://github.com/certifysphere/workshops.git
+git clone --branch express-backend-mongo-db https://github.com/certifysphere/workshops.git
 ```
 
-This will clone the repository and checkout the `new-school-app` branch, which contains the code up to this section of the workshop.
+This will clone the repository and checkout the `express-backend-mongo-db` branch, which contains the code up to this section of the workshop.
 
-You can then navigate to the `new-school-app-backend` directory to access the updated Node.js backend code for the new school app.
+You can then navigate to the `schools-listing-backend` directory to access the updated Node.js backend code for the new school app.
 
 ```bash
-cd workshops/react-express-workshop/new-school-app-backend/
+cd workshops/react-express-workshop/schools-listing-backend/
 ```
-
-With the updated Node.js backend code and MongoDB integration, you have a solid foundation to build the backend API for the new school app. You can now proceed with building the frontend React app and connecting it to the backend API to create a complete school management system. Happy coding!
 
