@@ -189,5 +189,3 @@ window.mainloop()
 ```
 
 In this section, we covered advanced topics such as file handling, regular expressions, exception handling, decorators, metaprogramming, generators, iterators, multithreading, multiprocessing, and an introduction to GUI programming. These topics expand your Python knowledge and empower you to tackle more complex programming tasks.
-
-In the next section, we'll explore libraries and frameworks in Python for various domains and purposes.

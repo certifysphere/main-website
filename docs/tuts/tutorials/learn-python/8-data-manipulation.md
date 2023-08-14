@@ -88,6 +88,17 @@ Python offers many other powerful libraries for data manipulation and analysis, 
 
 ### Summary
 
-In this section, we explored some of the key libraries for data manipulation and analysis in Python. NumPy provides powerful numerical computing capabilities, pandas offers versatile data manipulation tools with DataFrames, and matplotlib enables the creation of visually appealing visualizations. Understanding and utilizing these libraries can greatly enhance your ability to work with and gain insights from data. In
+In this section, we explored some of the key libraries for data manipulation and analysis in Python. NumPy provides powerful numerical computing capabilities, pandas offers versatile data manipulation tools with DataFrames, and matplotlib enables the creation of visually appealing visualizations. Understanding and utilizing these libraries can greatly enhance your ability to work with and gain insights from data. 
 
- the next section, we'll delve into the world of web scraping in Python.
+ ### Github Repo
+:::info
+  You can refer to and clone the code samples for this tutorial from the [GitHub repository](https://github.com/certifysphere/python-code-samples).
+
+  To clone the repository, you can use the following command:
+
+  ```bash
+  git clone https://github.com/certifysphere/python-code-samples.git
+  ```
+
+  You can then navigate to the `/src` directory to access all the code samples given in this tutorial. 
+:::

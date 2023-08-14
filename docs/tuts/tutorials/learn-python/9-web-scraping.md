@@ -82,6 +82,17 @@ When performing web scraping, it's important to be mindful of the ethics and leg
 
 ### Summary
 
-In this section, we explored web scraping with Python. We learned how to retrieve the HTML content of a web page using the `requests` library and parse and extract data from it using `Beautiful Soup`. We also touched on handling dynamic websites using libraries like `Selenium`. Web scraping opens up possibilities for collecting data from various sources, but it's essential to scrape responsibly and respect the
+In this section, we explored web scraping with Python. We learned how to retrieve the HTML content of a web page using the `requests` library and parse and extract data from it using `Beautiful Soup`. We also touched on handling dynamic websites using libraries like `Selenium`. Web scraping opens up possibilities for collecting data from various sources, but it's essential to scrape responsibly and respect the websites you are scraping. 
 
- websites you are scraping. In the next section, we'll cover object-oriented programming (OOP) in Python.
+  ### Github Repo
+:::info
+  You can refer to and clone the code samples for this tutorial from the [GitHub repository](https://github.com/certifysphere/python-code-samples).
+
+  To clone the repository, you can use the following command:
+
+  ```bash
+  git clone https://github.com/certifysphere/python-code-samples.git
+  ```
+
+  You can then navigate to the `/src` directory to access all the code samples given in this tutorial. 
+:::

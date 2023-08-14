@@ -30,7 +30,7 @@ Once you have installed a library, you can import it into your Python code using
 ```python
 import requests
 
-response = requests.get('https://api.example.com/data')
+response = requests.get('https://openlibrary.org/api/books?bibkeys=ISBN:0201558025,LCCN:93005405&format=json')
 print(response.status_code)
 ```
 
@@ -43,10 +43,10 @@ APIs (Application Programming Interfaces) allow different software applications 
 ```python
 import requests
 
-response = requests.get('https://api.example.com/data')
+response = requests.get('https://openlibrary.org/api/books?bibkeys=ISBN:0201558025,LCCN:93005405&format=json')
 data = response.json()
 
-print(data['key'])
+print(data)
 ```
 
 In the above code, we send a GET request to an API endpoint using the `requests` library. We retrieve the response and use the `json()` method to convert the response data into a Python dictionary. We can then access specific values from the JSON response using the dictionary keys.
@@ -58,3 +58,16 @@ When working with external libraries, it's important to consult their documentat
 ### Summary
 
 In this section, we covered the basics of working with external libraries and interacting with APIs in Python. We learned how to install external libraries using `pip`, import them into our code, and use them to perform various tasks. Working with external libraries and APIs expands the capabilities of Python and allows you to leverage existing solutions to solve complex problems. In the next section, we'll explore the world of data manipulation and analysis in Python.
+
+### Github Repo
+:::info
+  You can refer to and clone the code samples for this tutorial from the [GitHub repository](https://github.com/certifysphere/python-code-samples).
+
+  To clone the repository, you can use the following command:
+
+  ```bash
+  git clone https://github.com/certifysphere/python-code-samples.git
+  ```
+
+  You can then navigate to the `/src` directory to access all the code samples given in this tutorial. 
+:::
