@@ -94,61 +94,8 @@ print(f"Hello, {name}! You are {age} years old.")
 
 In the above code, we use the `input()` function to prompt the user for input. The user's name and age are stored in variables. Then, we use the `print()` function to display a message that includes the provided name and age.
 
-### Introduction to Modules and Libraries
 
-Python provides a vast collection of modules and libraries that extend its functionality and make it easier to work with files, perform input/output operations, and more. Modules are Python files containing reusable code, while libraries are collections of modules that serve specific purposes.
-
-To use a module or library in your Python code, you need to import it first. Here's an example of importing the `os` module, which provides functions for interacting with the operating system:
-
-```python
-import os
-
-# Using functions from the os module
-current_directory = os.getcwd()
-print(current_directory)
-
-file_exists = os.path.exists("myfile.txt")
-print(file_exists)
-```
-
-In the above code, we import the `os` module using the `import` statement. We then use functions from the `os` module, such as `getcwd()` to get the current working directory and `path.exists()` to check if a file exists.
-
-Python also allows you to import specific functions or classes from a module using the `from` keyword. Here's an example:
-
-```python
-from math import sqrt
-
-result = sqrt(25)
-print(result)
-```
-
-In the above code, we import only the `sqrt()` function from the `math` module. This allows us to use the `sqrt()` function directly without referencing the module name.
-
-Besides the built-in modules, Python has a vast ecosystem of third-party libraries that provide additional functionality for various domains and purposes. Some popular libraries include:
-
-- `NumPy`: A library for numerical computing with arrays and matrices.
-- `Pandas`: A library for data manipulation and analysis.
-- `Matplotlib`: A library for creating visualizations and plots.
-- `Requests`: A library for making HTTP requests.
-- `BeautifulSoup`: A library for web scraping and parsing HTML/XML documents.
-- `Django`: A web framework for building web applications.
-- `Flask`: A lightweight web framework for building web applications.
-
-To use these libraries, you need to install them first using a package manager like `pip`. Once installed, you can import and utilize their functionalities in your Python code.
-
-```python
-import numpy as np
-
-arr = np.array([1, 2, 3, 4, 5])
-mean = np.mean(arr)
-print(mean)
-```
-
-In the above code, we import the `numpy` library and use the `mean()` function from the `numpy` module to calculate the mean of an array.
-
-By leveraging modules and libraries, you can tap into a wide range of pre-built functionality, save time, and enhance your Python programs' capabilities.
-
-These are the basics of working with files, input/output operations and modules & libraries in Python. In the next section, we'll dive into object-oriented programming (OOP) concepts.
+These are the basics of working with files, input/output operations. In the next section, we'll dive into object-oriented programming (OOP) concepts.
 
 ### Github Repo
 :::info

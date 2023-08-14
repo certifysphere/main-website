@@ -90,6 +90,8 @@ try:
         raise ValueError("Age cannot be negative!")
 except ValueError as e:
     print(str(e))
+else:
+    print(f"Entered age {age}")
 ```
 
 In the above code, we ask the user to enter their age. If the entered age is negative, we raise a `ValueError` with a custom error message.
@@ -98,4 +100,17 @@ In the above code, we ask the user to enter their age. If the entered age is neg
 
  Summary
 
-In this section, we explored error handling and exception handling in Python. We learned how to use the `try-except` block to catch and handle exceptions, handle specific exceptions, include the `else` and `finally` blocks, and raise exceptions. Proper error handling ensures that your code can gracefully handle unexpected situations and provides a better user experience. In the next section, we'll cover working with external libraries and APIs in Python.
+In this section, we explored error handling and exception handling in Python. We learned how to use the `try-except` block to catch and handle exceptions, handle specific exceptions, include the `else` and `finally` blocks, and raise exceptions. Proper error handling ensures that your code can gracefully handle unexpected situations and provides a better user experience.
+
+### Github Repo
+:::info
+  You can refer to and clone the code samples for this tutorial from the [GitHub repository](https://github.com/certifysphere/python-code-samples).
+
+  To clone the repository, you can use the following command:
+
+  ```bash
+  git clone https://github.com/certifysphere/python-code-samples.git
+  ```
+
+  You can then navigate to the `/src` directory to access all the code samples given in this tutorial. 
+:::
