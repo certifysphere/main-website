@@ -86,7 +86,22 @@ class ElectricCar(Car):
 
 In the above code, we define a new class `ElectricCar`, which is a subclass of `Car`. The `ElectricCar` class inherits the attributes and methods from `Car` using the `super()` function. Additionally, the `ElectricCar` class has its own attribute `battery_capacity` and a method `charge()`.
 
-Polymorphism is the ability of an object to take different forms or behave differently based on the context. In Python, polymorphism is achieved through method overriding and method overloading. Method overriding allows a subclass to provide a different implementation of a method defined in its superclass. Method overloading, however, is not directly supported in Python.
+`Polymorphism` is the ability of an object to take different forms or behave differently based on the context. In Python, polymorphism is achieved through method overriding and method overloading. Method overriding allows a subclass to provide a different implementation of a method defined in its superclass. Method overloading, however, is not directly supported in Python.
+
+```python
+# Method Overriding
+class ElectricCar(Car):
+    def __init__(self, make, model, year, battery_capacity):
+        super().__init__(make, model, year)
+        self.battery_capacity = battery_capacity
+
+    def charge(self):
+        print("The electric car is charging.")
+    
+    # Overriding base class method 
+    def display_info(self):
+        print(f"Car: {self.make} {self.model}, Year: {self.year}, BatteryCapacity: {self.battery_capacity}")
+```
 
 ### Encapsulation and Data Hiding
 
@@ -162,6 +177,10 @@ Instance methods allow objects to perform actions and interact with their own da
 
 Both class methods and instance methods play important roles in defining the behavior and functionality of classes in Object-Oriented Programming. By understanding and utilizing these methods effectively, you can create more flexible and powerful class designs.
 
+### Summary
+
+In this section, we explored the basics of Object-Oriented Programming in Python. We learned about classes, objects, inheritance, polymorphism, encapsulation, and data hiding. Understanding these concepts is crucial for building complex and scalable applications. In the next section, we'll delve into modules and packages in Python.
+
 ### Github Repo
 :::info
   You can refer to and clone the code samples for this tutorial from the [GitHub repository](https://github.com/certifysphere/python-code-samples).
@@ -174,7 +193,3 @@ Both class methods and instance methods play important roles in defining the beh
 
   You can then navigate to the `/src` directory to access all the code samples given in this tutorial. 
 :::
-
-### Summary
-
-In this section, we explored the basics of Object-Oriented Programming in Python. We learned about classes, objects, inheritance, polymorphism, encapsulation, and data hiding. Understanding these concepts is crucial for building complex and scalable applications. In the next section, we'll delve into modules and packages in Python.

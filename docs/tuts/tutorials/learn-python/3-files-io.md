@@ -149,3 +149,16 @@ In the above code, we import the `numpy` library and use the `mean()` function f
 By leveraging modules and libraries, you can tap into a wide range of pre-built functionality, save time, and enhance your Python programs' capabilities.
 
 These are the basics of working with files, input/output operations and modules & libraries in Python. In the next section, we'll dive into object-oriented programming (OOP) concepts.
+
+### Github Repo
+:::info
+  You can refer to and clone the code samples for this tutorial from the [GitHub repository](https://github.com/certifysphere/python-code-samples).
+
+  To clone the repository, you can use the following command:
+
+  ```bash
+  git clone https://github.com/certifysphere/python-code-samples.git
+  ```
+
+  You can then navigate to the `/src` directory to access all the code samples given in this tutorial. 
+:::

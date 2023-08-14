@@ -90,3 +90,16 @@ print(person["age"])  # Output: 25
 Lists are mutable, meaning you can modify their elements. Tuples are immutable, so you cannot change their values after creation. Dictionaries store key-value pairs, allowing you to access values using their corresponding keys.
 
 These are just the basics of Python programming. In the next section, we'll dive deeper into functions and explore more advanced concepts.
+
+### Github Repo
+:::info
+  You can refer to and clone the code samples for this tutorial from the [GitHub repository](https://github.com/certifysphere/python-code-samples).
+
+  To clone the repository, you can use the following command:
+
+  ```bash
+  git clone https://github.com/certifysphere/python-code-samples.git
+  ```
+
+  You can then navigate to the `/src` directory to access all the code samples given in this tutorial. 
+:::
