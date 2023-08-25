@@ -1,12 +1,10 @@
 ---
 slug: react-python-flask-todo-app
-title: React UI and Python Rest API TODOs App
+title: Build a Todo Management Application with React and Python Flask
 authors:
   name: Vishal
 tags: [react, python, flask, restapi]
 ---
-## Building a Todo Management Application with React and Python Flask
-
 In this tutorial, we will build a Todo management application that allows users to create, read, update, and delete todos. We will use React for the frontend user interface and Python Flask for the backend REST API. By the end of this tutorial, you will have a functional Todo application with CRUD operations.
 
 ### Prerequisites
