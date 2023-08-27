@@ -59,11 +59,16 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-          gtag: {
-            trackingID: 'G-TKWWQRV8GH',
-            anonymizeIP: true,
-          },
-      
+        gtag: {
+          trackingID: 'G-TKWWQRV8GH',
+          anonymizeIP: true,
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
+        },
       }),
     ],
   ],
@@ -71,7 +76,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      metadata: [{name: 'keywords', content: 'free coding bootcamp, learn python, learn reactjs, aws, software consulting'}],
+      metadata: [{ name: 'keywords', content: 'free coding bootcamp, learn python, learn react, aws, software consulting' }],
       // Replace with your project's social card
       image: 'img/certifysphere_banner_social.png',
       navbar: {
@@ -93,14 +98,14 @@ const config = {
             position: 'left',
             label: 'WorkShops',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          { to: '/blog', label: 'Blog', position: 'left' },
           {
             type: 'docSidebar',
             sidebarId: 'bootcampSidebar',
             position: 'right',
             label: 'Free BootCamp',
           },
-          {to: '/contact-us', label: 'Contact-Us', position: 'right'},
+          { to: '/contact-us', label: 'Contact-Us', position: 'right' },
           {
             href: 'https://github.com/certifysphere/',
             label: 'GitHub',
@@ -108,51 +113,51 @@ const config = {
           },
         ],
       },
-       footer: {
-         style: 'dark',
-         links: [
-      //     {
-      //       title: 'Docs',
-      //       items: [
-      //         {
-      //           label: 'Tutorial',
-      //           to: '/docs/intro',
-      //         },
-      //       ],
-      //     },
-      //     {
-      //       title: 'Community',
-      //       items: [
-      //         {
-      //           label: 'Stack Overflow',
-      //           href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-      //         },
-      //         {
-      //           label: 'Discord',
-      //           href: 'https://discordapp.com/invite/docusaurus',
-      //         },
-                {
-                  label: 'Twitter',
-                  href: 'https://twitter.com/certifysphere',
-                },
-             ],
-      //     },
-      //     {
-      //       title: 'More',
-      //       items: [
-      //         {
-      //           label: 'Blog`',
-      //           to: '/blog',
-      //         },
-      //         {
-      //           label: 'GitHub',
-      //           href: 'https://github.com/facebook/docusaurus',
-      //         },
-      //       ],
-      //     },
-   //      ],
-         copyright: `Copyright © ${new Date().getFullYear()} CertifySphere Solutions.`,
-       },
+      footer: {
+        style: 'dark',
+        links: [
+          //     {
+          //       title: 'Docs',
+          //       items: [
+          //         {
+          //           label: 'Tutorial',
+          //           to: '/docs/intro',
+          //         },
+          //       ],
+          //     },
+          //     {
+          //       title: 'Community',
+          //       items: [
+          //         {
+          //           label: 'Stack Overflow',
+          //           href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+          //         },
+          //         {
+          //           label: 'Discord',
+          //           href: 'https://discordapp.com/invite/docusaurus',
+          //         },
+          {
+            label: 'Twitter',
+            href: 'https://twitter.com/certifysphere',
+          },
+        ],
+        //     },
+        //     {
+        //       title: 'More',
+        //       items: [
+        //         {
+        //           label: 'Blog`',
+        //           to: '/blog',
+        //         },
+        //         {
+        //           label: 'GitHub',
+        //           href: 'https://github.com/facebook/docusaurus',
+        //         },
+        //       ],
+        //     },
+        //      ],
+        copyright: `Copyright © ${new Date().getFullYear()} CertifySphere Solutions.`,
+      },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
