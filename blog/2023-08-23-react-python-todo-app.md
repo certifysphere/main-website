@@ -26,6 +26,12 @@ npx create-react-app todo-app
 cd todo-app
 ```
 
+Run the following command to install Axios using npm:
+
+```bash
+npm install axios
+```
+
 **Step 2: Create the TodoList Component**
 
 Inside the `src` directory, create a new folder named `components`. Inside the `components` folder, create a file named `TodoList.js`.
@@ -176,29 +182,201 @@ if __name__ == '__main__':
 
 **Step 5: Implement CRUD Operations**
 
-Add the CRUD routes and operations to the `app.py` file. Refer to the previous responses for the complete code.
+Add the CRUD routes and operations to the `app.py` file. 
+
+```python
+from flask import Flask, jsonify, request
+
+app = Flask(__name__)
+
+todos = [
+    {"id": 1, "title": "Buy groceries"},
+    {"id": 2, "title": "Do laundry"},
+]
+
+next_id = len(todos) + 1
+
+# Get all todos
+@app.route('/api/todos', methods=['GET'])
+def get_todos():
+    return jsonify(todos)
+
+# Get a single todo by ID
+@app.route('/api/todos/<int:todo_id>', methods=['GET'])
+def get_todo(todo_id):
+    todo = next((t for t in todos if t['id'] == todo_id), None)
+    if todo:
+        return jsonify(todo)
+    return jsonify({"message": "Todo not found"}), 404
+
+# Create a new todo
+@app.route('/api/todos', methods=['POST'])
+def create_todo():
+    global next_id
+    data = request.json
+    new_todo = {"id": next_id, "title": data["title"]}
+    todos.append(new_todo)
+    next_id += 1
+    return jsonify(new_todo), 201
+
+# Update an existing todo
+@app.route('/api/todos/<int:todo_id>', methods=['PUT'])
+def update_todo(todo_id):
+    data = request.json
+    todo = next((t for t in todos if t['id'] == todo_id), None)
+    if todo:
+        todo['title'] = data['title']
+        return jsonify(todo)
+    return jsonify({"message": "Todo not found"}), 404
+
+# Delete a todo
+@app.route('/api/todos/<int:todo_id>', methods=['DELETE'])
+def delete_todo(todo_id):
+    global todos
+    todos = [t for t in todos if t['id'] != todo_id]
+    return jsonify({"message": "Todo deleted"}), 200
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
 
 ### Part 3: Connecting Frontend and Backend
 
 **Step 1: Fetch Data from Backend**
 
-Update the `TodoList.js` component to fetch todos from the backend API.
+Update the `TodoList.js` component to fetch todos from the backend API and add other operations to update and delete todos.
 
 ```jsx
 // src/components/TodoList.js
-// ...
-useEffect(() => {
-  fetch('/api/todos')
-    .then(response => response.json())
-    .then(data => setTodos(data))
-    .catch(error => console.error('Error fetching todos:', error));
-}, []);
-// ...
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+const TodoList = () => {
+    const [todos, setTodos] = useState([]);
+    const [newTodo, setNewTodo] = useState('');
+    
+    const API_ENDPOINT = "http://127.0.0.1:5000";
+
+    useEffect(() => {
+        fetchTodos();
+    }, []);
+    // Add functions for update and delete operations
+
+    const fetchTodos = async () => {
+        try {
+            const response = await axios.get(API_ENDPOINT + '/api/todos');
+            setTodos(response.data);
+        } catch (error) {
+            console.error('Error fetching todos:', error);
+        }
+    };
+
+    const addTodo = async () => {
+        try {
+            const response = await axios.post(API_ENDPOINT + '/api/todos', { title: newTodo });
+            setTodos([...todos, response.data]);
+            setNewTodo('');
+        } catch (error) {
+            console.error('Error adding todo:', error);
+        }
+    };
+
+    const deleteTodo = async (id) => {
+        try {
+            await axios.delete(API_ENDPOINT + `/api/todos/${id}`);
+            setTodos(todos.filter(todo => todo.id !== id));
+        } catch (error) {
+            console.error('Error deleting todo:', error);
+        }
+    };
+    return (
+        <div>
+            <h1>Todo App</h1>
+            <div>
+                <input
+                    type="text"
+                    value={newTodo}
+                    onChange={e => setNewTodo(e.target.value)}
+                    placeholder="Enter a new todo"
+                />
+                <button onClick={addTodo}>Add</button>
+            </div>
+            <ul>
+                {todos.map(todo => (
+                    <li key={todo.id}>
+                        {todo.title}{' '}
+                        <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+};
+
+export default TodoList;
+```
+Note  - Update API_ENDPOINT to correct port if running Flask app on any other port than default 500.
+
+**Step 2: Enable CORS**
+
+The CORS (Cross-Origin Resource Sharing) error occurs when a web application running at one origin (domain) tries to make a request to a server located at a different origin. By default, browsers enforce the same-origin policy, which restricts these cross-origin requests for security reasons. To resolve CORS errors, you need to configure your Flask backend to allow requests from your React frontend's domain.
+
+Here's how you can resolve CORS errors in a Flask backend:
+
+1. Install the `Flask-CORS` extension:
+
+If you haven't already installed `Flask-CORS`, you need to do so using the following command:
+
+```bash
+cd flask-backend
+pip install Flask-CORS
 ```
 
-**Step 2: Handle CRUD Operations**
+2. Import and use `CORS` in your Flask app:
 
-Inside the `TodoList` component, add functions and handlers for create, update, and delete operations. Refer to the previous responses for the code.
+In your Flask `app.py` file, import and use the `CORS` extension to enable cross-origin requests from your React frontend. You need to specify the `origins` parameter to allow requests from your frontend's domain.
 
+```python
+from flask import Flask, jsonify, request
+from flask_cors import CORS
 
-You've built a Todo management application with CRUD operations using React for the frontend and Python Flask for the backend. This application allows users to create, read, update, and delete todos. Remember that this is a simplified example, and you can further enhance the application with error handling, validation, user authentication, and database integration.
+app = Flask(__name__)
+CORS(app, origins="http://localhost:3000")  # Replace with your React app's URL
+
+# ... (other routes and code)
+```
+
+Replace `"http://localhost:3000"` with the actual URL of your React frontend. This configuration will allow requests from your React app's domain.
+
+3. Enable CORS for specific routes:
+
+You can also enable CORS for specific routes if needed. For example:
+
+```python
+CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}})
+```
+
+This would enable CORS only for routes under `/api/`.
+
+4. Restart your Flask server:
+
+After making these changes, restart your Flask server so that the CORS configuration takes effect.
+
+With these steps, your Flask backend should allow cross-origin requests from your React frontend, and you should no longer encounter CORS errors. Remember that enabling CORS should be done with caution and consideration for security, and it's important to restrict allowed origins to only the domains that need access to your backend API.
+
+### Summary
+
+You've built a Todo management application with CRUD operations using React for the frontend and Python Flask for the backend. This application allows users to create, read, and delete todos. Remember that this is a simplified example, and you can further enhance the application with error handling, validation, user authentication, and database integration.
+
+### Github Repo
+:::info
+  You can refer to and clone the code samples for this tutorial from the [GitHub repository](https://github.com/certifysphere/python-code-samples).
+
+  To clone the repository, you can use the following command:
+
+  ```bash
+  git clone https://github.com/certifysphere/python-code-samples.git
+  ```
+
+  You can then navigate to the `/src/todo-react-python` directory to access all the code samples given in this tutorial. 
+:::
