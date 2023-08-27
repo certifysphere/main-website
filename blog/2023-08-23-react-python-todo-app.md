@@ -315,7 +315,7 @@ const TodoList = () => {
 
 export default TodoList;
 ```
-Note  - Update API_ENDPOINT to correct port if running Flask app on any other port than default 500.
+Note  - Update API_ENDPOINT to correct port if running Flask app on any other port than default 5000.
 
 **Step 2: Enable CORS**
 
