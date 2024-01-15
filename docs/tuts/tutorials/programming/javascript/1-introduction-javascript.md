@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 id: java-script-tutorial
-title: JavaScript
+title: Introduction to JavaScript
 tags:
   - javascript
   - web

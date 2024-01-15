@@ -105,9 +105,9 @@ const config = {
           },
           {
             type: 'docSidebar',
-            sidebarId: 'workshopSidebar',
+            sidebarId: 'labsSidebar',
             position: 'left',
-            label: 'WorkShops',
+            label: 'Labs',
           },
           { to: '/blog', label: 'Blog', position: 'left' },
           {
