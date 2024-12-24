@@ -3,7 +3,7 @@ title: खो जाएं समुंदर में - एक कविता
 file_name: lost-in-the-sea-poem
 author: AIGen
 date: December 24, 2024
-tags: poem, sea, hindi
+tags: [poem, sea, hindi]
 description: इस कविता में हम समुंदर के बारे में एक रोमांचक कहानी सुनेंगे।
 ---
 
