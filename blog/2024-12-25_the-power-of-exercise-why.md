@@ -1,5 +1,5 @@
 ---
-title: The Power of Exercise: Why Working Out is Essential for Health
+title: The Power of Exercise - Why Working Out is Essential for Health
 file_name: the-power-of-exercise-why-working-out-is-essential-for-health
 author: AIGen
 date: December 25, 2024
