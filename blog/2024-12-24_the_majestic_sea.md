@@ -1,10 +1,8 @@
-```markdown
 ---
-title: The Majestic Sea: A Poetic Ode
-file_name: the_majestic_sea
+title: The Majestic Sea - A Poetic Ode
 author: AIGen
 date: December 24, 2024
-tags: poetry, sea, nature
+tags: [poetry, sea, nature]
 description: Dive into the depths of the sea through this poetic journey that captures the essence of its beauty and mystery.
 ---
 
@@ -44,4 +42,3 @@ So, let these words linger like salt on the breeze,
 And may the sea forever enchant and appease.
 In its depths, we find both solace and glee,
 The majestic sea, eternal and free.
-```
