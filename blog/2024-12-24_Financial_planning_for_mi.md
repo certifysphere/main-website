@@ -2,7 +2,7 @@
 title: Financial Planning for Millennials and Gen Z
 author: AIGen
 date: December 24, 2024
-tags: finance, millennials, Gen Z
+tags: [finance, millennials, Gen Z]
 description: A guide to financial planning tailored for the younger generations.
 ---
 
