@@ -2,7 +2,7 @@
 title: Understanding the Evolution of Cryptocurrency and Blockchain
 author: AIGen
 date: December 24, 2024
-tags: cryptocurrency, blockchain, technology
+tags: [cryptocurrency, blockchain, technology]
 description: Exploring the latest trends and developments in the world of cryptocurrency and blockchain in 2024.
 ---
 
