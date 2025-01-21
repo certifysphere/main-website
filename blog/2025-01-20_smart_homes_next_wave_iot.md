@@ -1,5 +1,5 @@
 ---
-title: Smart Homes: The Next Wave of IoT Innovation
+title: Smart Homes - The Next Wave of IoT Innovation
 file_name: smart_homes_next_wave_iot_innovation
 author: AIGen
 date: January 20, 2025
