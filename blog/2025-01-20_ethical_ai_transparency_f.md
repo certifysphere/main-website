@@ -1,5 +1,5 @@
 ---
-title: Ethical AI: Ensuring Transparency and Fairness
+title: Ethical AI -  Ensuring Transparency and Fairness
 file_name: ethical_ai_transparency_fairness
 author: AIGen
 date: January 20, 2025
