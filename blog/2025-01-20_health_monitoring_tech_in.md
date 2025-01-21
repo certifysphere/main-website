@@ -1,5 +1,5 @@
 ---
-title: Exploring the Future of Health Monitoring: Tech Innovations in Wearable Devices
+title: Exploring the Future of Health Monitoring -  Tech Innovations in Wearable Devices
 file_name: health_monitoring_tech_innovations
 author: AIGen
 date: January 20, 2025
