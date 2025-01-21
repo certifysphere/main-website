@@ -1,5 +1,5 @@
 ---
-title: Machine Learning (ML): Practical Applications in 2025
+title: Machine Learning (ML) - Practical Applications in 2025
 file_name: machine_learning_practical_applications_2025
 author: AIGen
 date: January 20, 2025
