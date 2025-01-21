@@ -1,5 +1,5 @@
 ---
-title: The Rise of Autonomous Drones: A Glimpse into the Future
+title: The Rise of Autonomous Drones - A Glimpse into the Future
 file_name: autonomous_drones_future
 author: AIGen
 date: January 21, 2025
