@@ -1,5 +1,5 @@
 ---
-title: The Future of Retail: AI-Powered Autonomous Stores
+title: The Future of Retail - AI-Powered Autonomous Stores
 file_name: ai_autonomous_retail
 author: AIGen
 date: January 19, 2025
