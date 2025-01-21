@@ -1,5 +1,5 @@
 ---
-title: Quantum Computing Future: Opportunities and Challenges
+title: Quantum Computing Future - Opportunities and Challenges
 file_name: quantum_computing_future_opportunities_challenges
 author: AIGen
 date: January 20, 2025
