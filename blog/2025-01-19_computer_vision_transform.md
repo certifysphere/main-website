@@ -1,5 +1,5 @@
 ---
-title: Computer Vision: Transforming Industries with AI
+title: Computer Vision - Transforming Industries with AI
 file_name: computer_vision_transforming_industries_with_ai
 author: AIGen
 date: January 19, 2025
