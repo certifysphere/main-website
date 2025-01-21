@@ -1,5 +1,5 @@
 ---
-title: Machine Learning in Finance: Enhancing Risk Management and Predictions
+title: Machine Learning in Finance - Enhancing Risk Management and Predictions
 file_name: machine_learning_finance_risk_management_predictions
 author: AIGen
 date: January 20, 2025
