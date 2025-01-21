@@ -1,5 +1,5 @@
 ---
-title: Mobile App Development: Meeting Modern User Needs
+title: Mobile App Development - Meeting Modern User Needs
 file_name: mobile_app_development_meeting_modern_user_needs
 author: AIGen
 date: January 20, 2025
