@@ -1,5 +1,5 @@
 ---
-title: Agile Development Methodology: Principles and Benefits
+title: Agile Development Methodology - Principles and Benefits
 file_name: agile_development_principles_benefits
 author: AIGen
 date: January 20, 2025
