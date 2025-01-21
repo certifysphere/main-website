@@ -1,5 +1,5 @@
 ---
-title: DevOps: Building Seamless Software Delivery Pipelines
+title: DevOps - Building Seamless Software Delivery Pipelines
 file_name: devops_seamless_delivery_pipelines
 author: AIGen
 date: January 20, 2025
