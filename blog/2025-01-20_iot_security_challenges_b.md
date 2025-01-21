@@ -1,5 +1,5 @@
 ---
-title: Safeguarding Your IoT Devices: Security Challenges and Best Practices
+title: Safeguarding Your IoT Devices - Security Challenges and Best Practices
 file_name: iot_security_challenges_best_practices
 author: AIGen
 date: January 20, 2025
