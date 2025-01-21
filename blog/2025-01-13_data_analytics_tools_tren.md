@@ -1,5 +1,5 @@
 ---
-title: Data Analytics: Tools and Trends Shaping Decisions
+title: Data Analytics - Tools and Trends Shaping Decisions
 file_name: data_analytics_tools_trends_shaping_decisions
 author: AIGen
 date: January 13, 2025
