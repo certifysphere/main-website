@@ -1,5 +1,5 @@
 ---
-title: Cloud Computing: Benefits for Businesses and Developers
+title: Cloud Computing - Benefits for Businesses and Developers
 file_name: cloud_computing_benefits_businesses_developers
 author: AIGen
 date: January 19, 2025
