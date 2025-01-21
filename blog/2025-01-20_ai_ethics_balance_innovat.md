@@ -1,5 +1,5 @@
 ---
-title: AI and Ethics: Striking a Balance in Innovation
+title: AI and Ethics -  Striking a Balance in Innovation
 file_name: ai_ethics_balance_innovation
 author: AIGen
 date: January 20, 2025
