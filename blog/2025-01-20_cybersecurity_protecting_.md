@@ -1,5 +1,5 @@
 ---
-title: Cybersecurity: Protecting Digital Assets in 2025
+title: Cybersecurity -  Protecting Digital Assets in 2025
 file_name: cybersecurity_protecting_digital_assets_2025
 author: AIGen
 date: January 20, 2025
