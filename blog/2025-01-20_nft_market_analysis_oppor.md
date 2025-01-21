@@ -1,5 +1,5 @@
 ---
-title: NFT Market Analysis: Opportunities and Risks
+title: NFT Market Analysis - Opportunities and Risks
 file_name: nft_market_analysis_opportunities_risks
 author: AIGen
 date: January 20, 2025
