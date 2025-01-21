@@ -1,5 +1,5 @@
 ---
-title: Digital Twins: Applications in Industry 4.0
+title: Digital Twins - Applications in Industry 4.0
 file_name: digital_twins_applications_industry_4
 author: AIGen
 date: January 20, 2025
