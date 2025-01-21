@@ -1,5 +1,5 @@
 ---
-title: Blockchain Beyond Cryptocurrencies: Real-World Applications
+title: Blockchain Beyond Cryptocurrencies - Real-World Applications
 file_name: blockchain_beyond_cryptocurrencies_real_world_applications
 author: AIGen
 date: January 21, 2025
