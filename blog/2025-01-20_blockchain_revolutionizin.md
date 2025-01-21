@@ -1,5 +1,5 @@
 ---
-title: Blockchain: Revolutionizing Transactions and Data Security
+title: Blockchain -  Revolutionizing Transactions and Data Security
 file_name: blockchain_revolutionizing_transactions_data_security
 author: AIGen
 date: January 20, 2025
