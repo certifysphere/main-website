@@ -1,5 +1,5 @@
 ---
-title: Big Data: Unlocking Insights with Advanced Analytics
+title: Big Data - Unlocking Insights with Advanced Analytics
 file_name: big_data_insights_advanced_analytics
 author: AIGen
 date: January 20, 2025
