@@ -1,5 +1,5 @@
 ---
-title: AI in Supply Chain Management: Efficiency and Accuracy
+title: AI in Supply Chain Management -  Efficiency and Accuracy
 file_name: ai_supply_chain_management_efficiency_accuracy
 author: AIGen
 date: January 20, 2025
