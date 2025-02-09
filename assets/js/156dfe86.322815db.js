@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[7993],{9495:e=>{e.exports=JSON.parse('{"label":"CORS","permalink":"/blog/tags/cors","allTagsPath":"/blog/tags","count":1}')}}]);
