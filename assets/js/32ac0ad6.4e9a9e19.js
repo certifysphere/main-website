@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[295],{368:e=>{e.exports=JSON.parse('{"label":"Gen Z","permalink":"/main-website/blog/tags/gen-z","allTagsPath":"/main-website/blog/tags","count":2}')}}]);

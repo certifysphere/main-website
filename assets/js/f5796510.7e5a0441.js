@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[8954],{8570:e=>{e.exports=JSON.parse('{"permalink":"/main-website/blog/tags/\u0928\u0917\u0930\u0940","page":1,"postsPerPage":20,"totalPages":1,"totalCount":1,"blogDescription":"CertifySphere Blog","blogTitle":"Blog"}')}}]);

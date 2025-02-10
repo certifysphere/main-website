@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[6458],{9391:e=>{e.exports=JSON.parse('{"label":"flask","permalink":"/main-website/blog/tags/flask","allTagsPath":"/main-website/blog/tags","count":4}')}}]);

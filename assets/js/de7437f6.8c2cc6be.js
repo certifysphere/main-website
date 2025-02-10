@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[4586],{2552:e=>{e.exports=JSON.parse('{"permalink":"/main-website/blog/tags/poem","page":1,"postsPerPage":20,"totalPages":1,"totalCount":1,"blogDescription":"CertifySphere Blog","blogTitle":"Blog"}')}}]);

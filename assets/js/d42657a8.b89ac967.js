@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[2763],{8808:e=>{e.exports=JSON.parse('{"label":"work remotely","permalink":"/blog/tags/work-remotely","allTagsPath":"/blog/tags","count":1}')}}]);
