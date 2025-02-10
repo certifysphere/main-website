@@ -17,3 +17,4 @@ jobs:
           publish_dir: ./build
           publish_branch: gh-pages
           custom_domain: certifysphere.com
+          cname: certifysphere.com
