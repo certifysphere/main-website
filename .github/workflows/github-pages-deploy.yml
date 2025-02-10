@@ -3,6 +3,7 @@ name: Deploy to GitHub Pages on test branch
   push:
     branches:
       - githubpages
+      - main
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
