@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[1005],{3053:a=>{a.exports=JSON.parse('{"label":"digital nomads","permalink":"/blog/tags/digital-nomads","allTagsPath":"/blog/tags","count":1}')}}]);

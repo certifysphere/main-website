@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[2018],{9211:e=>{e.exports=JSON.parse('{"label":"millennials","permalink":"/blog/tags/millennials","allTagsPath":"/blog/tags","count":2}')}}]);
