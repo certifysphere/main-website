@@ -4,6 +4,11 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+// You can replace the above themes with other themes available in prism-react-renderer
+// For example:
+// const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
+// const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'CertifySphere',
@@ -121,7 +126,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'bootcampSidebar',
             position: 'right',
-            label: 'Free BootCamp',
+            label: 'Free Internship',
           },
           { to: '/contact-us', label: 'Contact-Us', position: 'right' },
           {
@@ -181,6 +186,8 @@ const config = {
         darkTheme: darkCodeTheme,
         additionalLanguages: ['java'],
       },
+      // You can also add custom CSS to further customize the theme
+      customCss: require.resolve('./src/css/custom.css'),
     }),
 };
 
