@@ -92,7 +92,7 @@ const config = {
       announcementBar: {
         id: 'support_us',
         content:
-        'Registration is open for the fall free internship and bootcamp. <a target="_blank"  rel="noopener noreferrer" href="https://forms.gle/Lp6RQ1unCzZB5Pyn9">Click Here to Register.</a>.',
+        'Registration is open for the free internship. <a target="_blank"  rel="noopener noreferrer" href="https://forms.gle/Lp6RQ1unCzZB5Pyn9">Click Here to Register.</a>.',
         backgroundColor: '#fafbfc',
         textColor: '#091E42',
         isCloseable: true,
